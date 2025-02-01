@@ -1,0 +1,21 @@
+# Utiliser une image officielle Node.js optimisée pour la production
+FROM node:22-alpine
+
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les fichiers de package.json pour installer les dépendances
+RUN npx create-react-app frontend
+
+WORKDIR /app/frontend
+
+# RUN pwd && ls . && false
+# Installer les dépendances
+RUN npm install
+
+RUN npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+# Copier les fichiers sources si nouveau projet
+# COPY . .
+

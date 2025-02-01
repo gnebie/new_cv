@@ -1,0 +1,30 @@
+# Utiliser une image officielle Node.js optimisée pour la production
+FROM node:20-alpine
+
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les fichiers de package.json pour installer les dépendances
+COPY package*.json ./
+
+# Installer les dépendances
+# RUN npm install --legacy-peer-deps
+RUN npm install 
+
+# RUN npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+# RUN npm install @chakra-ui/react web-vitals axios
+
+# RUN npm install @chakra-ui/react axios @babel/plugin-proposal-private-property-in-object
+
+# Copier les fichiers sources
+COPY . .
+
+# Exposer le port 3000 pour le serveur de développement
+EXPOSE 3000
+
+# Lancer le serveur de développement React
+CMD ["npm", "start"]
+# Commande pour lancer l'application en pre-production
+# CMD ["npx", "serve", "-s", "build", "-l", "3000"]

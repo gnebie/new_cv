@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  install-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.install
+    volumes:
+      - ./frontend:/app-out  # Récupère les fichiers générés localement
+    command: ["cp", "-r", "/app/frontend/package.json", "/app-out/"]
+    profiles:
+      - install-only  # Ajoute ce service au profil "install-only"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"  # Expose le serveur de dev React sur le port 3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Résout les problèmes de hot-reloading dans les conteneurs
+    volumes:
+      - ./frontend:/app  # Montre les fichiers locaux pour le hot-reloading
+      - /app/node_modules  # Empêche le conflit avec les dépendances locales
+    stdin_open: true
+    tty: true
+
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./backend:/app
+    stdin_open: true
+    tty: true
