@@ -4,10 +4,10 @@ services:
   install-frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile.install
+      dockerfile: Dockerfile.dev
     volumes:
       - ./frontend:/app-out  # Récupère les fichiers générés localement
-    command: ["cp", "-r", "/app/frontend/package.json", "/app-out/"]
+    command: ["cp", "-r", "/app/package-lock.json", "/app-out/"]
     profiles:
       - install-only  # Ajoute ce service au profil "install-only"
 
@@ -16,7 +16,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile.dev
     ports:
-      - "3000:3000"  # Expose le serveur de dev React sur le port 3000
+      - "5173:5173"  # Expose le serveur de dev React sur le port 5173
     environment:
       - CHOKIDAR_USEPOLLING=true  # Résout les problèmes de hot-reloading dans les conteneurs
     volumes:
