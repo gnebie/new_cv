@@ -10,31 +10,33 @@ const FEATURES = [
     title: "🔧 Backend & API sur-mesure",
     description: "Développement de **microservices performants**, optimisés pour la scalabilité.",
     icon: FaCode,
-    image: "/assets/backend.svg",  // Ajoute une image SVG ou PNG ici
+    image: "/code-944499_1280.jpg",
   },
   {
     title: "🚀 Scalabilité & Performance",
     description: "Optimisation d'**API rapides et sécurisées**, capables de gérer des milliers d'utilisateurs.",
     icon: FaRocket,
-    image: "/assets/scalability.svg",
+    image: "/blockchain-3537389_1280.jpg",
   },
   {
     title: "🤝 Accompagnement & Stratégie",
     description: "Conseils techniques, architecture et intégration IA **sur-mesure pour votre projet**.",
     icon: FaUserTie,
-    image: "/assets/mentoring.svg",
+    image: "/code-8779047_1280.jpg",
   },
 ];
 
 function WhyMe() {
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
   const accentColor = useColorModeValue("primary.500", "secondary.500");
-  const bgColor = useColorModeValue("gray.100", "gray.900");  // Fond pour séparer la section
+  const bgColor = useColorModeValue("gray.100", "gray.900"); // Fond de la section
+  const bgCartColor = useColorModeValue("rgba(255, 255, 255, 0.2)", "rgba(0, 0, 0, 0.2)"); // Effet Glassmorphism
+  const borderCartColor = useColorModeValue("rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.1)");
 
   return (
-    <Box bg={bgColor} py={16} px={8}>
-      <Heading color={textColor} size="xl" textAlign="center" mb={8}>
-        💡 Pourquoi me choisir ?
+    <Box bg={bgColor} py={20} px={8} position="relative">
+      <Heading color={textColor} size="xl" textAlign="center" mb={12}>
+        💡 Pourquoi travailler avec moi ?
       </Heading>
 
       <HStack
@@ -46,17 +48,35 @@ function WhyMe() {
         {FEATURES.map((feature, index) => (
           <MotionBox
             key={index}
-            bg="white"
-            p={6}
-            borderRadius="lg"
-            boxShadow="xl"
+            position="relative"
+            p={8}
+            borderRadius="20px"
+            boxShadow="lg"
             width={{ base: "100%", md: "30%" }}
+            border="1px solid"
+            borderColor={borderCartColor}
+            bg={bgCartColor}
+            backdropFilter="blur(10px)"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
+            overflow="hidden"
           >
+            {/* Effet image de fond semi-transparent */}
+            <Image
+              src={feature.image}
+              alt={feature.title}
+              position="absolute"
+              top="0"
+              left="0"
+              width="100%"
+              height="100%"
+              objectFit="cover"
+              opacity="0.2"
+              zIndex="-1"
+            />
+
             <VStack spacing={4} align="center">
-              <Image src={feature.image} boxSize="100px" alt={feature.title} />
-              <Icon as={feature.icon} boxSize={8} color={accentColor} />
+              <Icon as={feature.icon} boxSize={10} color={accentColor} />
               <Heading size="md" color={accentColor} textAlign="center">
                 {feature.title}
               </Heading>
@@ -64,6 +84,23 @@ function WhyMe() {
                 {feature.description}
               </Text>
             </VStack>
+
+            {/* Effet lumineux au hover */}
+            <Box
+              position="absolute"
+              top="-50px"
+              left="-50px"
+              width="200px"
+              height="200px"
+              bg={accentColor}
+              opacity="0.15"
+              filter="blur(80px)"
+              transition="all 0.5s ease-in-out"
+              _hover={{
+                opacity: "0.3",
+                transform: "scale(1.2)",
+              }}
+            />
           </MotionBox>
         ))}
       </HStack>

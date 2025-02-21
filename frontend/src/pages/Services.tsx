@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import FallingText from '../components/react-bits/FallingText';
 import InfiniteScroll from '../components/react-bits/InfiniteScroll';
+import SplitText from '../components/react-bits/SplitText';
+import DecryptedText from '../components/react-bits/DecryptedText';
 
 const MotionBox = motion(Box);
 
@@ -55,7 +57,7 @@ function Services() {
     <Box bg={bgColor} p={8}>
       <VStack spacing={12} align="stretch">
         <Heading color={textColor} size="xl" textAlign="center">
-          🔧 Mes Services
+          🔧 En quoi puis je vous aider ?
         </Heading>
 
 
@@ -72,10 +74,30 @@ function Services() {
               <service.icon color={accentColor} size="40px" />
               <VStack align="start">
                 <Heading size="md" color={textColor}>
-                  {service.title}
+                        <SplitText
+      text={service.title}
+      className="text-2xl font-semibold text-center"
+      delay={150}
+      animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+      animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+      easing="easeOutCubic"
+      threshold={0.2}
+      rootMargin="-50px"
+      />
+
+                  
                 </Heading>
                 <Text fontSize="md" color={textColor}>
-                  {service.description}
+                          <DecryptedText
+text={service.description}
+speed={100}
+animateOn="view"
+maxIterations={10}
+revealDirection="start"
+sequential={true}
+/>
+
+                  
                 </Text>
               </VStack>
             </HStack>

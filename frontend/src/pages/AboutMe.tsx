@@ -6,6 +6,8 @@ const About = lazy(() => import("./aboutme/About"));
 const Skills = lazy(() => import("./aboutme/Skills"));
 const Experience = lazy(() => import("./aboutme/Experiences"));
 const Projects = lazy(() => import("./aboutme/Projects"));
+const SoftSkills = lazy(() => import("./aboutme/SoftSkills"));
+
 
 function AboutMe() {
   const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
@@ -78,6 +80,19 @@ function AboutMe() {
               <Skills />
             </AccordionPanel>
           </AccordionItem>
+
+          <AccordionItem>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                <Heading size="md" color={textColor}>😎 Moi (derrière le développeur, un être humain)</Heading>
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <SoftSkills />
+            </AccordionPanel>
+          </AccordionItem>
+
         </Accordion>
       </Suspense>
     </Box>

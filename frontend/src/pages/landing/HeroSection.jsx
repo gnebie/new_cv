@@ -11,6 +11,7 @@ const MotionButton = motion(Button);
 
 function HeroSection() {
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
+  const bgColor = useColorModeValue("surface.light.100", "surface.dark.100");
   const bgGradient = useColorModeValue(
     "linear(to-b, rgba(255,255,255,0.7), rgba(255,255,255,0))",  // Mode clair
     "linear(to-b, rgba(0,0,0,0.6), rgba(0,0,0,0))"  // Mode sombre
@@ -46,10 +47,16 @@ function HeroSection() {
           🚀 Transformez votre <Text as="span" color="primary.500">Backend & IA</Text> en un atout stratégique
         </Heading>
 
-        <Box bg="rgba(0, 0, 0, 0.6)" p={6} borderRadius="md" backdropFilter="blur(10px)">
-          <Text fontSize="xl" color="white">
-            Vous avez besoin d’une **API ultra-performante** ou d’une **intégration IA sur mesure** ?  
-            Je vous aide à **automatiser vos processus** et **scaler votre infrastructure**, sans compromis sur la qualité.
+        <Box bg={bgColor} p={6} borderRadius="md" backdropFilter="blur(10px)">
+        <Text fontSize="xl" color={textColor}>
+            Vous avez besoin d’une API ultra-performante ou d’une intégration IA sur mesure ?  
+            </Text>
+
+          <Text fontSize="xl" color={textColor}>
+            Bienvenu sur mon site, NEBIE Guillaume, Architecte de reves
+            </Text>
+            <Text fontSize="xl" color={textColor}>
+            Je vous aide à automatiser vos processus et scaler votre infrastructure, sans compromis sur la qualité.
           </Text>
         </Box>
 
@@ -58,7 +65,7 @@ function HeroSection() {
           <Lottie animationData={heroAnimation} loop={true} />
         </Box> */}
 
-        <StarBorder as={Link} to="/contact" colorScheme="primary" size="lg" mt={4} whileHover={{ scale: 1.05 }}>
+        <StarBorder as={Link} to="/contact" size="lg" mt={4}>
           🚀 Discutons de votre projet
         </StarBorder>
       </VStack>

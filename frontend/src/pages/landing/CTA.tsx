@@ -8,13 +8,15 @@ const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
 function CTA() {
-  const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
+    const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
+    const bgColor = useColorModeValue("surface.light.100", "surface.dark.100");
 
   return (
     <MotionBox textAlign="center" p={10}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
+      bg={bgColor}
     >
       <Heading color={textColor} size="xl">
       <ShinyText text="🔥 Prêt à propulser votre projet ?" disabled={false} speed={2} className='custom-class' />
