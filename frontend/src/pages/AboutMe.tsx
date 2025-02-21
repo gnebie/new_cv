@@ -1,0 +1,75 @@
+import { Box, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Heading, useColorModeValue } from "@chakra-ui/react";
+import { Suspense, lazy } from "react";
+
+// Chargement dynamique des pages
+const About = lazy(() => import("./aboutme/About"));
+const Skills = lazy(() => import("./aboutme/Skills"));
+const Experience = lazy(() => import("./aboutme/Experience"));
+const Projects = lazy(() => import("./aboutme/Projects"));
+
+function AboutMe() {
+  const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
+  const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
+
+  return (
+    <Box bg={bgColor} p={8}>
+      <Suspense fallback={<p>Chargement...</p>}>
+        <Accordion allowToggle defaultIndex={[0]} allowMultiple>
+          {/* À PROPOS */}
+          <AccordionItem>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                <Heading size="md" color={textColor}>🚀 À propos de moi</Heading>
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <About />
+            </AccordionPanel>
+          </AccordionItem>
+
+          {/* EXPÉRIENCE */}
+          <AccordionItem>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                <Heading size="md" color={textColor}>💼 Expériences</Heading>
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <Experience />
+            </AccordionPanel>
+          </AccordionItem>
+
+          {/* PROJETS */}
+          <AccordionItem>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                <Heading size="md" color={textColor}>🔥 Projets</Heading>
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <Projects />
+            </AccordionPanel>
+          </AccordionItem>
+
+          {/* COMPÉTENCES */}
+          <AccordionItem>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                <Heading size="md" color={textColor}>📈 Compétences</Heading>
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <Skills />
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+      </Suspense>
+    </Box>
+  );
+}
+
+export default AboutMe;

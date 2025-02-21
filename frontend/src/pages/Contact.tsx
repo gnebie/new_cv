@@ -3,6 +3,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+import ChatSection from '../components/chat/ChatSection';
 const MotionBox = motion(Box);
 
 function Contact() {
@@ -53,6 +54,11 @@ function Contact() {
             <IconButton aria-label="Email" icon={<FaEnvelope />} size="lg" variant="ghost" _hover={{ color: iconHoverColor }} />
           </Link>
         </HStack>
+        <h2 color={textColor}>Discuter avec mon avatar virtuel</h2>
+
+      <ChatSection />
+
+      <h2 color={textColor}>Envoyer moi un mail</h2>
 
         {/* Formulaire de contact */}
         <Box as="form" width="100%" onSubmit={handleSubmit}>
