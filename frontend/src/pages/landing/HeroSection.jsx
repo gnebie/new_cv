@@ -26,7 +26,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import BlurText from '../../components/react-bits/BlurText'
-import MagnetLines from '../../components/react-bits/MagnetLines'
+import StarBorder from '../../components/react-bits/StarBorder';
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -57,10 +57,13 @@ function HeroSection() {
         concevoir des **APIs performantes**, intégrer des **modèles IA avancés** et automatiser 
         leurs processus.
       </Text>
-      <MotionButton as={Link} to="/contact" colorScheme="primary" size="lg" mt={6} margin={10}
-        whileHover={{ scale: 1.05 }}>
+            <StarBorder as={Link} to="/contact" colorScheme="primary" size="lg" mt={6} whileHover={{ scale: 1.05 }}>
+
+      {/* <MotionButton as={Link} to="/contact" colorScheme="primary" size="lg" mt={6} margin={10}
+        whileHover={{ scale: 1.05 }}> */}
         Discutons de votre projet
-      </MotionButton>
+      {/* </MotionButton> */}
+      </ StarBorder>
     </MotionBox>
   );
 }

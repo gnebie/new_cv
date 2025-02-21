@@ -3,6 +3,7 @@ import { FaCode, FaRobot, FaCloud, FaDatabase } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import FallingText from '../components/react-bits/FallingText';
+import InfiniteScroll from '../components/react-bits/InfiniteScroll';
 
 const MotionBox = motion(Box);
 
@@ -33,6 +34,22 @@ function Services() {
   const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
   const accentColor = useColorModeValue("primary.500", "secondary.500");
+  const items = [
+    { content: "Text Item 1" },
+    { content: <p>Paragraph Item 2</p> },
+    { content: "Text Item 3" },
+    { content: <p>Paragraph Item 4</p> },
+    { content: "Text Item 5" },
+    { content: <p>Paragraph Item 6</p> },
+    { content: "Text Item 7" },
+    { content: <p>Paragraph Item 8</p> },
+    { content: "Text Item 9" },
+    { content: <p>Paragraph Item 10</p> },
+    { content: "Text Item 11" },
+    { content: <p>Paragraph Item 12</p> },
+    { content: "Text Item 13" },
+    { content: <p>Paragraph Item 14</p> },
+  ];
 
   return (
     <Box bg={bgColor} p={8}>
@@ -81,6 +98,19 @@ function Services() {
         <Button as={Link} to="/contact" colorScheme="primary" size="lg">
           Demander un devis
         </Button>
+        import InfiniteScroll from './InfiniteScroll';
+  
+        <Box style={{height: '500px', position: 'relative'}}>
+        <InfiniteScroll
+            items={items}
+            isTilted={true}
+            tiltDirection='left'
+            autoplay={true}
+            autoplaySpeed={0.1}
+            autoplayDirection="down"
+            pauseOnHover={true}
+        />
+        </Box>
       </VStack>
     </Box>
   );

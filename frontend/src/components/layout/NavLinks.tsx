@@ -29,6 +29,7 @@ export function NavLinks({ isMobile = false }: { isMobile?: boolean }) {
           </RouterLink>
         ))}
         <RouterLink to="/contact">
+        
         <Button width="100%">
 Contact
             </Button>

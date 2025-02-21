@@ -2,6 +2,7 @@ import { Box, Heading, Text, VStack, Button, useColorModeValue } from '@chakra-u
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ShinyText from '../../components/react-bits/ShinyText';
+import StarBorder from '../../components/react-bits/StarBorder';
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -22,10 +23,11 @@ function CTA() {
       <Text fontSize="xl" color={textColor} mt={3}>
         Contactez-moi dès aujourd'hui pour discuter de votre projet et voir comment je peux vous aider.
       </Text>
-      <MotionButton as={Link} to="/contact" colorScheme="primary" size="lg" mt={6}
-        whileHover={{ scale: 1.05 }}>
+      <MotionButton as={Link} to="/contact" colorScheme="primary" size="lg" mt={6} whileHover={{ scale: 1.05 }}>
+      {/* <StarBorder as={Link} to="/contact" colorScheme="primary" size="lg" mt={6} whileHover={{ scale: 1.05 }}> */}
         Parler de mon projet
-      </MotionButton>
+        {/* </StarBorder> */}
+        </MotionButton>
     </MotionBox>
   );
 }

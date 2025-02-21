@@ -1,5 +1,6 @@
 import { Box, Center, Image, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Heading, useColorModeValue } from "@chakra-ui/react";
 import { Suspense, lazy } from "react";
+import Aurora from "../components/react-bits/Aurora";
 
 // Chargement dynamique des pages
 const About = lazy(() => import("./aboutme/About"));
@@ -13,6 +14,9 @@ function AboutMe() {
 
   return (
     <Box bg={bgColor} p={8}>
+        {/* <Aurora
+colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+speed={0.5}/> */}
       <Suspense fallback={<p>Chargement...</p>}>
         <Accordion allowToggle defaultIndex={[0]} allowMultiple>
           {/* À PROPOS */}
