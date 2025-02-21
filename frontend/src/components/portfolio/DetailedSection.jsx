@@ -1,8 +1,10 @@
-import { Box, Heading, Text, VStack } from '@chakra-ui/react';
+import { Box, Heading, Text, VStack, useColorModeValue } from '@chakra-ui/react';
 
 function DetailedSection() {
+  const bgColor = useColorModeValue("surface.light.100", "surface.dark.100");
+
   return (
-    <Box padding="4rem" bg="gray.50">
+    <Box padding="4rem" bg={bgColor}>
       <VStack spacing={4} align="start">
         <Heading fontSize="3xl">À propos de moi</Heading>
         <Text fontSize="lg">

@@ -1,13 +1,14 @@
 import { Box, Heading, Text, Button, VStack } from '@chakra-ui/react';
 
 function HeroSection() {
+  
   return (
     <Box 
       bgImage="url('https://source.unsplash.com/random/1600x900')" 
       bgSize="cover" 
       bgPos="center" 
-      height="100vh" 
-      color="white" 
+      height="50vh" 
+      color="grey" 
       padding="4rem"
     >
       <VStack spacing={4} align="start">
