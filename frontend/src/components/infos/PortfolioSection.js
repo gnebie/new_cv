@@ -22,7 +22,7 @@ function PortfolioSection() {
           <Box key={index} bg="white" p={4} borderRadius="md" shadow="md">
             <Heading fontSize="xl">{project.title}</Heading>
             <Text mt={2}>{project.description}</Text>
-            <Button mt={4} colorScheme="teal" as="a" href={project.link} target="_blank">
+            <Button mt={4} colorScheme="primary.500" as="a" href={project.link} target="_blank">
               Voir le projet
             </Button>
           </Box>

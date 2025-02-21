@@ -13,7 +13,7 @@ function ContactForm() {
         <Input placeholder="Votre nom" required />
         <Input type="email" placeholder="Votre adresse e-mail" required />
         <Textarea placeholder="Votre message" required />
-        <Button type="submit" colorScheme="teal" size="lg">Envoyer</Button>
+        <Button type="submit" colorScheme="primary.500" size="lg">Envoyer</Button>
       </VStack>
     </Box>
   );

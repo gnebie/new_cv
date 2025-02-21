@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import ChatSection from '../components/chat/ChatSection';
 import MagnetLines from '../components/react-bits/MagnetLines'
+import { Helmet } from "react-helmet";
 
 import FAQ from "./FAQ";
 import SplashCursor from "../components/react-bits/SplashCursor";
@@ -32,6 +33,11 @@ function Contact() {
 
   return (
     <Box position="relative" width="100%" margin="auto">
+            <Helmet>
+    <title> Nebie Guillaume - Contact</title>
+    <meta name="description" content="Page Contact de Nebie Guillaume, développeur backend Python et intégration IA." />
+  </Helmet>
+
         <SplashCursor />
         {/* <BlobCursor /> */}
       <Box

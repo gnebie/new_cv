@@ -1,7 +1,6 @@
 import { Box, Center, Image, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Heading, useColorModeValue } from "@chakra-ui/react";
 import { Suspense, lazy } from "react";
-import Aurora from "../components/react-bits/Aurora";
-
+import { Helmet } from "react-helmet";
 // Chargement dynamique des pages
 const About = lazy(() => import("./aboutme/About"));
 const Skills = lazy(() => import("./aboutme/Skills"));
@@ -13,10 +12,12 @@ function AboutMe() {
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
 
   return (
-    <Box bg={bgColor} p={8}>
-        {/* <Aurora
-colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-speed={0.5}/> */}
+    <Box bg={bgColor} p={8}>      
+    <Helmet>
+    <title>À propos de Nebie Guillaume - Expert Backend Python & IA</title>
+    <meta name="description" content="Découvrez Nebie Guillaume, développeur backend Python et intégration IA. Expertise en FastAPI, Flask, et automatisation IA." />
+  </Helmet>
+
       <Suspense fallback={<p>Chargement...</p>}>
         <Accordion allowToggle defaultIndex={[0]} allowMultiple>
           {/* À PROPOS */}

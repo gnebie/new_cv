@@ -16,7 +16,7 @@ function SkillsSection() {
         {skills.map((skill, index) => (
           <Box key={index} width="100%">
             <Text fontSize="lg" mb={2}>{skill.name}</Text>
-            <Progress value={skill.level} size="lg" colorScheme="teal" />
+            <Progress value={skill.level} size="lg" colorScheme="primary.500" />
           </Box>
         ))}
       </VStack>

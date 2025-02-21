@@ -1,6 +1,7 @@
 import { Box, Text, useColorModeValue, Link, HStack, IconButton, Center } from '@chakra-ui/react';
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import Magnet from '../../components/react-bits/Magnet'
+import { Link as RouterLink } from "react-router-dom";
 
 function Footer() {
   // Utilisation du thème pour la gestion automatique des couleurs
@@ -42,7 +43,11 @@ function Footer() {
       <Text fontSize="sm">
         © 2025 NEBIE Guillaume CV. Tous droits réservés.
       </Text>
-
+      <HStack spacing={4}>
+  <Link as={RouterLink} to="/aboutme">Nebie Guillaume</Link>
+  <Link as={RouterLink} to="/projects">Projets</Link>
+  <Link as={RouterLink} to="/contact">Contact</Link>
+</HStack>
     </Box>
   );
 }

@@ -58,19 +58,6 @@ function Services() {
           🔧 Mes Services
         </Heading>
 
-        <Box height="150px">
-        <FallingText
-        text={`Ne créez pas des services a base de code de mauvaise qualite qui se cassera au premier utilisateur qui utilisera votre service.`}
-        highlightWords={["React", "Bits", "animated", "components", "simplify"]}
-        highlightClass="highlighted"
-        trigger="hover"
-        backgroundColor="transparent"
-        wireframes={false}
-        gravity={0.56}
-        fontSize="2rem"
-        mouseConstraintStiffness={0.9}
-        />
-        </Box>
 
         {SERVICES.map((service, index) => (
           <MotionBox
@@ -98,7 +85,19 @@ function Services() {
         <Button as={Link} to="/contact" colorScheme="primary" size="lg">
           Demander un devis
         </Button>
-        import InfiniteScroll from './InfiniteScroll';
+        <Box height="150px">
+        <FallingText
+        text={`Ne créez pas des services a base de code de mauvaise qualite qui se cassera au premier utilisateur qui utilisera votre service.`}
+        highlightWords={["React", "Bits", "animated", "components", "simplify"]}
+        highlightClass="highlighted"
+        trigger="hover"
+        backgroundColor="transparent"
+        wireframes={false}
+        gravity={0.56}
+        fontSize="2rem"
+        mouseConstraintStiffness={0.9}
+        />
+        </Box>
   
         <Box style={{height: '500px', position: 'relative'}}>
         <InfiniteScroll

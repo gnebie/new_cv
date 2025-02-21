@@ -6,7 +6,7 @@ const MotionButton = motion(Button);
 function AnimatedButton() {
   return (
     <MotionButton
-      colorScheme="teal"
+      colorScheme="primary.500"
       size="lg"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}

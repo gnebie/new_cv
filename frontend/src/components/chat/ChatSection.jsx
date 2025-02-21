@@ -90,7 +90,7 @@ function Chatbot() {
           fontSize="2xl"
           p={4}
           borderRadius="full"
-          colorScheme="blue"
+          colorScheme="primary.500"
           boxShadow="lg"
           onClick={toggleChat}
           _hover={{ transform: "scale(1.1)", transition: "0.2s" }}
@@ -129,7 +129,7 @@ function Chatbot() {
               {messages.map((msg, index) => (
                 <HStack key={index} alignSelf={msg.sender === "user" ? "flex-end" : "flex-start"}>
                   <Box
-                    bg={msg.sender === "user" ? "blue.500" : "gray.200"}
+                    bg={msg.sender === "user" ? "primary.700" : "primary.200"}
                     color={msg.sender === "user" ? "white" : "black"}
                     px={4}
                     py={2}
@@ -150,7 +150,7 @@ function Chatbot() {
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
               />
-              <Button colorScheme="blue" onClick={sendMessage}>
+              <Button colorScheme="primary.500" onClick={sendMessage}>
                 Envoyer
               </Button>
             </HStack>

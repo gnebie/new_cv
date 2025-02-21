@@ -1,6 +1,7 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import { Suspense, lazy } from 'react';
 import CaseStudies from "./landing/CaseStudies";
+import { Helmet } from "react-helmet";
 
 const HeroSection = lazy(() => import('./landing/HeroSection'));
 const ChatSection = lazy(() => import('../components/chat/ChatSection'));
@@ -14,14 +15,50 @@ const CTA = lazy(() => import("./landing/CTA"));
 function Home() {
   return (
     <Box >
+    <Helmet>
+    <title> Nebie Guillaume - Homepage</title>
+    <meta name="description" content="Landing Page de Nebie Guillaume, développeur backend Python et intégration IA." />
+    <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nebie Guillaume",
+      "jobTitle": "Développeur Backend & Intelligence Artificielle",
+      "url": "https://guillaume.nebie.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/nebieguillaumelale",
+        "https://github.com/gnebie"
+      ]
+    })}
+  </script>
+  </Helmet>
+
       <Suspense fallback={<p>Chargement...</p>}>
-        <HeroSection />
+      <Box 
+        position="absolute" 
+        top="50" 
+        zIndex="-1" 
+        
+        opacity="0.4" // 💡 Ajuste la transparence si besoin
+      >
+        <Image src="/public/illustration_home_2.png" width="20000px"       height="70vh"
+        />
+      </Box>
+      <Box position="relative">
+          <HeroSection />
+        </Box>        <Box height="80px" />
         <WhyMe />
+        <Box height="80px" />
         <Experience />
+        <Box height="80px" />
         <CTA />
+        <Box height="80px" />
         <ChatSection />
+        <Box height="80px" />
         <CaseStudies />
+        <Box height="80px" />
         <CTA />
+        <Box height="80px" />
         <DetailedSection />
       </Suspense>
     </Box>

@@ -1,81 +1,73 @@
-import { Box, Heading, Text, VStack, HStack, Icon, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, VStack, HStack, Icon, useColorModeValue, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { FaCode, FaRocket, FaUserTie } from 'react-icons/fa';
-import SplitText from '../../components/react-bits/SplitText'
-import DecryptedText from '../../components/react-bits/DecryptedText';
 
 const MotionBox = motion(Box);
+
+// Définition des cartes
+const FEATURES = [
+  {
+    title: "🔧 Backend & API sur-mesure",
+    description: "Développement de **microservices performants**, optimisés pour la scalabilité.",
+    icon: FaCode,
+    image: "/assets/backend.svg",  // Ajoute une image SVG ou PNG ici
+  },
+  {
+    title: "🚀 Scalabilité & Performance",
+    description: "Optimisation d'**API rapides et sécurisées**, capables de gérer des milliers d'utilisateurs.",
+    icon: FaRocket,
+    image: "/assets/scalability.svg",
+  },
+  {
+    title: "🤝 Accompagnement & Stratégie",
+    description: "Conseils techniques, architecture et intégration IA **sur-mesure pour votre projet**.",
+    icon: FaUserTie,
+    image: "/assets/mentoring.svg",
+  },
+];
 
 function WhyMe() {
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
   const accentColor = useColorModeValue("primary.500", "secondary.500");
+  const bgColor = useColorModeValue("gray.100", "gray.900");  // Fond pour séparer la section
 
   return (
-    <MotionBox p={6}
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7 }}
-    >
-      <Heading color={textColor} size="xl" textAlign="center">
-        💡 
-        <SplitText
-      text="Pourquoi choisir mon expertise ?"
-      className="text-2xl font-semibold text-center"
-      delay={150}
-      animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-      animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-      easing="easeOutCubic"
-      threshold={0.2}
-      rootMargin="-50px"
-      />
-
+    <Box bg={bgColor} py={16} px={8}>
+      <Heading color={textColor} size="xl" textAlign="center" mb={8}>
+        💡 Pourquoi me choisir ?
       </Heading>
-      <VStack spacing={6} mt={6} align="start">
-        <HStack>
-          <Icon as={FaCode} color={accentColor} />
-          <Text fontSize="lg" color={textColor}>
-          <DecryptedText
-text="**Expert en Backend & API** → Développement de **microservices performants**."
-speed={100}
-animateOn="view"
-maxIterations={10}
-revealDirection="start"
-sequential={true}
-/>
-            
-          </Text>
-        </HStack>
-        <HStack>
-          <Icon as={FaRocket} color={accentColor} />
-          <Text fontSize="lg" color={textColor}>
-          <DecryptedText
-text="**Scalabilité et Performance** → Optimisation des **API & architecture serveur**."
-speed={100}
-animateOn="view"
-maxIterations={10}
-revealDirection="start"
-sequential={true}
-/>
 
-            
-          </Text>
-        </HStack>
-        <HStack>
-          <Icon as={FaUserTie} color={accentColor} />
-          <Text fontSize="lg" color={textColor}>
-          <DecryptedText
-text="**Accompagnement sur mesure** → Stratégie technique et automatisation IA."
-speed={100}
-animateOn="view"
-maxIterations={10}
-revealDirection="start"
-sequential={true}
-/>
-            
-          </Text>
-        </HStack>
-      </VStack>
-    </MotionBox>
+      <HStack
+        spacing={8}
+        justify="center"
+        align="stretch"
+        wrap="wrap"
+      >
+        {FEATURES.map((feature, index) => (
+          <MotionBox
+            key={index}
+            bg="white"
+            p={6}
+            borderRadius="lg"
+            boxShadow="xl"
+            width={{ base: "100%", md: "30%" }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <VStack spacing={4} align="center">
+              <Image src={feature.image} boxSize="100px" alt={feature.title} />
+              <Icon as={feature.icon} boxSize={8} color={accentColor} />
+              <Heading size="md" color={accentColor} textAlign="center">
+                {feature.title}
+              </Heading>
+              <Text fontSize="md" textAlign="center" color={textColor}>
+                {feature.description}
+              </Text>
+            </VStack>
+          </MotionBox>
+        ))}
+      </HStack>
+    </Box>
   );
 }
 
