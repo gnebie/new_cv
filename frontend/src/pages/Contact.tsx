@@ -4,7 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 import ChatSection from '../components/chat/ChatSection';
+import MagnetLines from '../components/react-bits/MagnetLines'
+
 import FAQ from "./FAQ";
+import SplashCursor from "../components/react-bits/SplashCursor";
+import BlobCursor from "../components/react-bits/BlobCursor";
 const MotionBox = motion(Box);
 
 function Contact() {
@@ -27,6 +31,27 @@ function Contact() {
   };
 
   return (
+    <Box position="relative" width="100%" margin="auto">
+        <SplashCursor />
+        {/* <BlobCursor /> */}
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        width="100%"
+        height="100%"
+        zIndex={-2} // ✅ Met MagnetLines derrière tout
+      >
+        <MagnetLines
+          rows={9}
+          columns={9}
+          containerSize="100%"
+          lineColor="tomato"
+          lineWidth="0.8vmin"
+          lineHeight="5vmin"
+          baseAngle={0}
+        />
+      </Box>
     <MotionBox
       bg={bgColor}
       p={8}
@@ -38,6 +63,7 @@ function Contact() {
       maxW="600px"
       mx="auto"
       mt={10}
+      zIndex={10}
     >
       <VStack spacing={6} align="center">
         <Heading color={textColor}>Me Contacter</Heading>
@@ -94,6 +120,7 @@ function Contact() {
         <FAQ />
       </VStack>
     </MotionBox>
+    </Box>
   );
 }
 

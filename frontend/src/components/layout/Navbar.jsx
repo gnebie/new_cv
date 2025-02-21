@@ -20,6 +20,7 @@ function Navbar() {
       
   return (
     <Box>
+      
       <Flex 
         as="nav"
         bg={bgColor}

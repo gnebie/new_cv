@@ -26,6 +26,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import BlurText from '../../components/react-bits/BlurText'
+import MagnetLines from '../../components/react-bits/MagnetLines'
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -40,6 +41,7 @@ function HeroSection() {
       transition={{ duration: 0.7 }}
       margin={10}
     >
+
       <Heading color={textColor} size="2xl">
       🚀 Boostez votre Backend Python & Intégration IA 
       {/* <BlurText
