@@ -38,9 +38,10 @@ function HeroSection() {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
+      margin={10}
     >
       <Heading color={textColor} size="2xl">
-      🚀 Boostez votre Backend Pyhon & Intégration IA 
+      🚀 Boostez votre Backend Python & Intégration IA 
       {/* <BlurText
   text=""
   delay={150}
@@ -54,7 +55,7 @@ function HeroSection() {
         concevoir des **APIs performantes**, intégrer des **modèles IA avancés** et automatiser 
         leurs processus.
       </Text>
-      <MotionButton as={Link} to="/contact" colorScheme="primary" size="lg" mt={6}
+      <MotionButton as={Link} to="/contact" colorScheme="primary" size="lg" mt={6} margin={10}
         whileHover={{ scale: 1.05 }}>
         Discutons de votre projet
       </MotionButton>
