@@ -5,6 +5,7 @@ import {
 } from '@chakra-ui/react';
 import { SunIcon, MoonIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { NavLinks } from './NavLinks';
+import { Link as RouterLink } from "react-router-dom";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -33,9 +34,11 @@ function Navbar() {
         zIndex="1000"
       >
         {/* Logo */}
+        <RouterLink to="/"  fontSize="lg" mb={2}>
         <Text fontSize="xl" fontWeight="bold" cursor="pointer" _hover={{ color: hoverColor }}>
-          Mon Site
+          NEBIE Guillaume
         </Text>
+        </RouterLink>
 
         {/* Navigation pour écrans larges */}
         <HStack spacing={6} display={{ base: "none", md: "flex" }}>

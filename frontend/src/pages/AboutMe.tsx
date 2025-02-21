@@ -1,10 +1,10 @@
-import { Box, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Heading, useColorModeValue } from "@chakra-ui/react";
+import { Box, Center, Image, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Heading, useColorModeValue } from "@chakra-ui/react";
 import { Suspense, lazy } from "react";
 
 // Chargement dynamique des pages
 const About = lazy(() => import("./aboutme/About"));
 const Skills = lazy(() => import("./aboutme/Skills"));
-const Experience = lazy(() => import("./aboutme/Experience"));
+const Experience = lazy(() => import("./aboutme/Experiences"));
 const Projects = lazy(() => import("./aboutme/Projects"));
 
 function AboutMe() {
@@ -24,6 +24,13 @@ function AboutMe() {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
+            <Center>
+                <Image maxW="300px" width="100%"
+                src="public/portrait.png"
+                fit="contain"
+                />
+            </Center>
+
               <About />
             </AccordionPanel>
           </AccordionItem>

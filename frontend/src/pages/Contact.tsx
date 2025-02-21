@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 import ChatSection from '../components/chat/ChatSection';
+import FAQ from "./FAQ";
 const MotionBox = motion(Box);
 
 function Contact() {
@@ -90,6 +91,7 @@ function Contact() {
             </Button>
           </VStack>
         </Box>
+        <FAQ />
       </VStack>
     </MotionBox>
   );
