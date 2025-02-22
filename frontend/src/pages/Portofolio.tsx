@@ -11,7 +11,7 @@ const PROJECTS = [
     techs: ["FastAPI", "React", "Stable Diffusion", "PostgreSQL", "Kubernetes"],
     image: "/images/fairytale_stories.png",  // Image illustrative
     github: "https://github.com/gnebie/fairytale-stories",
-    demo: "https://fairytale-ai-demo.com",
+    // demo: "https://fairytale-ai-demo.com",
   },
   {
     name: "SDK de calcul distribué",
@@ -26,13 +26,6 @@ const PROJECTS = [
     techs: ["Django", "PostgreSQL", "Redis", "CI/CD"],
     image: "/images/user_management.png",
     github: "https://github.com/gnebie/user-management-api",
-  },
-  {
-    name: "Modèle ASR personnalisé",
-    description: "Optimisation d'un modèle de reconnaissance vocale avec preprocessing avancé.",
-    techs: ["Python", "TensorFlow", "Librosa", "Flask"],
-    image: "/images/asr_model.png",
-    github: "https://github.com/gnebie/asr-model",
   },
 ];
 
