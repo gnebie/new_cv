@@ -15,7 +15,7 @@ import {
   Text,
   Badge,
   Spinner,
-  useColorModeValue,
+  // useColorModeValue,
 } from "@chakra-ui/react";
 import { FaCommentDots } from "react-icons/fa";
 import { useChat } from "../../hooks/useChat";
@@ -29,8 +29,8 @@ function Chatbot() {
   const [hasNewMessage, setHasNewMessage] = useState(true);
   const [showPreview, setShowPreview] = useState(false);
 
-  const bgColorMessage = useColorModeValue("surface.light.100", "surface.dark.100");
-  const bgColor = useColorModeValue("surface.light.300", "surface.dark.300");
+  // const bgColorMessage = useColorModeValue("surface.light.100", "surface.dark.100");
+  // const bgColor = useColorModeValue("surface.light.300", "surface.dark.300");
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -43,18 +43,6 @@ function Chatbot() {
     setUserInput("");
   };
 
-  // const sendMessage = () => {
-  //   if (!userInput.trim()) return;
-  //   setMessages([...messages, { sender: "user", text: userInput }]);
-  //   setUserInput("");
-
-  //   // Simuler une réponse du bot (à remplacer par un appel API)
-  //   setTimeout(() => {
-  //     const botMessage = { sender: "bot", text: "Merci pour votre message ! Le chat n'est pas encore actif, Je vous réponds bientôt." };
-  //     setMessages((prev) => [...prev,botMessage,]);
-  //     setHasNewMessage(true);
-  //   }, 1000);
-  // };
 
   return (
     <>

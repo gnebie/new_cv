@@ -1,13 +1,13 @@
-import { Box, Heading, Text, VStack, Button, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, VStack, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 // import Lottie from 'lottie-react';
-import BlurText from '../../components/react-bits/BlurText';
+// import BlurText from '../../components/react-bits/BlurText';
 import StarBorder from '../../components/react-bits/StarBorder';
 // import heroAnimation from '../../assets/hero-animation.json';  // Ajoute une animation Lottie
 
 const MotionBox = motion(Box);
-const MotionButton = motion(Button);
+// const MotionButton = motion(Button);
 
 function HeroSection() {
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");

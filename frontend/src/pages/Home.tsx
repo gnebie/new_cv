@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 const HeroSection = lazy(() => import('./landing/HeroSection'));
 const ChatSection = lazy(() => import('../components/chat/ChatSection'));
 const DetailedSection = lazy(() => import('../components/portfolio/DetailedSection'));
-const About = lazy(() => import('./aboutme/About'));
+// const About = lazy(() => import('./aboutme/About'));
 const Experience = lazy(() => import('./landing/Experience'));
 const WhyMe = lazy(() => import("./landing/WhyMe"));
 const CTA = lazy(() => import("./landing/CTA"));

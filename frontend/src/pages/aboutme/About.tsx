@@ -1,5 +1,5 @@
-import { Box, Flex, Heading, Text, VStack, HStack, Button, useColorModeValue, Divider, Tag, Icon } from '@chakra-ui/react';
-import { FaCode, FaRobot, FaRocket, FaUserTie, FaCheckCircle } from 'react-icons/fa';
+import { Box, Heading, Text, VStack, HStack, Button, useColorModeValue, Divider, Tag, Icon } from '@chakra-ui/react';
+import { FaCheckCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import RotatingText from '../../components/react-bits/RotatingText';
@@ -8,7 +8,7 @@ import RotatingText from '../../components/react-bits/RotatingText';
 const MotionBox = motion(Box);
 
 function About() {
-  const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
+  // const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
   const bgColor2 = useColorModeValue("surface.light.300", "surface.dark.300");
   const cardColor = useColorModeValue("surface.light.100", "surface.dark.100");
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");

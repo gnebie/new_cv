@@ -136,6 +136,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
       } else {
         return () => {
           observer.kill();
+          // eslint-disable-next-line @typescript-eslint/no-unused-expressions
           rafId && cancelAnimationFrame(rafId);
         };
       }

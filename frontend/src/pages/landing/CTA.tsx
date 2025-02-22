@@ -1,8 +1,8 @@
-import { Box, Heading, Text, VStack, Button, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, Button, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ShinyText from '../../components/react-bits/ShinyText';
-import StarBorder from '../../components/react-bits/StarBorder';
+// import StarBorder from '../../components/react-bits/StarBorder';
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);

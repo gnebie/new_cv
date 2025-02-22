@@ -1,5 +1,5 @@
-import { useSprings, animated, SpringValue } from '@react-spring/web';
-import { useEffect, useRef, useState, MutableRefObject } from 'react';
+import { useSprings, animated } from '@react-spring/web';
+import { useEffect, useRef, useState } from 'react';
 
 interface SplitTextProps {
     text?: string;
@@ -57,6 +57,7 @@ const SplitText: React.FC<SplitTextProps> = ({
         letters.map((_, i) => ({
             from: animationFrom,
             to: inView
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 ? async (next: (props: any) => Promise<void>) => {
                     await next(animationTo);
                     animatedCount.current += 1;

@@ -1,6 +1,6 @@
 import { Box, Heading, Text, VStack, HStack, IconButton, Input, Textarea, Button, useColorModeValue, Link } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import { useState } from "react";
+// import { useState } from "react";
 import { motion } from "framer-motion";
 
 import ChatSection from '../components/chat/ChatSection';

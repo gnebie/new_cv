@@ -1,6 +1,6 @@
-import { Box, Heading, Text, VStack, HStack, Icon, Tag, Divider, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, HStack, Icon, Tag, Divider, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaUsers, FaBrain, FaLightbulb, FaCodeBranch, FaFlag, FaTheaterMasks, FaGamepad, FaGlobe, FaMusic, FaUtensils, FaPlane } from 'react-icons/fa';
+import { FaUsers, FaBrain, FaLightbulb, FaFlag, FaTheaterMasks, FaGamepad, FaGlobe, FaMusic, FaUtensils, FaPlane } from 'react-icons/fa';
 
 const MotionBox = motion(Box);
 

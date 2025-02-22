@@ -181,6 +181,7 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
         }
       };
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (canvas as any).cleanupFuzzyText = cleanup;
     };
 
@@ -189,7 +190,9 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
     return () => {
       isCancelled = true;
       window.cancelAnimationFrame(animationFrameId);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if (canvas && (canvas as any).cleanupFuzzyText) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (canvas as any).cleanupFuzzyText();
       }
     };

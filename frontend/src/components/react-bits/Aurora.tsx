@@ -144,7 +144,7 @@ export default function Aurora(props: AuroraProps) {
     gl.clearColor(1, 1, 1, 1);
 
     // Declare program variable so it's available in the resize callback.
-    let program: Program;
+    let program: Program = undefined;
 
     function resize() {
       if (!ctn) return;

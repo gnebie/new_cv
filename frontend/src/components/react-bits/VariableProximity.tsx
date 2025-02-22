@@ -1,4 +1,4 @@
-import { forwardRef, useMemo, useRef, useEffect, MutableRefObject, RefObject } from "react";
+import { forwardRef, useMemo, useRef, useEffect, RefObject } from "react";
 import { motion } from "framer-motion";
 import "./VariableProximity.css";
 
@@ -56,6 +56,7 @@ interface VariableProximityProps {
     className?: string;
     onClick?: () => void;
     style?: React.CSSProperties;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
 }
 

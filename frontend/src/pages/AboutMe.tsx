@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const About = lazy(() => import("./aboutme/About"));
 const Skills = lazy(() => import("./aboutme/Skills"));
 const Experience = lazy(() => import("./aboutme/Experiences"));
-const Projects = lazy(() => import("./aboutme/Projects"));
+// const Projects = lazy(() => import("./aboutme/Projects"));
 const SoftSkills = lazy(() => import("./aboutme/SoftSkills"));
 const MotionBox = motion(Box);
 

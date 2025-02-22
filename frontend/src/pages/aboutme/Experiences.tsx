@@ -1,4 +1,4 @@
-import { Box, Heading, Text, VStack, HStack, Tag, useColorModeValue, Divider } from '@chakra-ui/react';
+import { Box, Heading, Text, VStack, HStack, Tag, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 // Animation des blocs d'expérience

@@ -1,5 +1,5 @@
 import { Box, Center, Heading, Text, VStack, HStack, Button, useColorModeValue } from '@chakra-ui/react';
-import { FaCode, FaRocket, FaRobot, FaCloud, FaDatabase } from 'react-icons/fa';
+import { FaCode, FaRocket, FaRobot, FaCloud } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import FallingText from '../components/react-bits/FallingText';

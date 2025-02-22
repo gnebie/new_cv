@@ -1,4 +1,4 @@
-import { HStack, Link, Button, VStack } from '@chakra-ui/react';
+import { HStack, Button, VStack } from '@chakra-ui/react';
 import { Link as RouterLink } from "react-router-dom";
 import GradientText from '../react-bits/GradientText';
 
