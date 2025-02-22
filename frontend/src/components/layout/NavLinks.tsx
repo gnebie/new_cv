@@ -5,7 +5,7 @@ import GradientText from '../react-bits/GradientText';
 // Liste des liens du menu
 const NAV_LINKS = [
     { label: "Ce que je peux faire pour vous", href: "/#What-Can-I-Do" },
-    { label: "Portfolio", href: "/#portfolio" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "Mes Services", href: "/services" },
   { label: "À propos de moi", href: "/aboutme" },
 ];

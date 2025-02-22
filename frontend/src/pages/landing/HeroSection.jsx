@@ -53,7 +53,7 @@ function HeroSection() {
             </Text>
 
           <Text fontSize="xl" color={textColor}>
-            Bienvenu sur mon site, NEBIE Guillaume, Architecte de reves
+            Bienvenu sur mon site, NEBIE Guillaume, Architecte de rêves
             </Text>
             <Text fontSize="xl" color={textColor}>
             Je vous aide à automatiser vos processus et scaler votre infrastructure, sans compromis sur la qualité.

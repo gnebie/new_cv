@@ -1,33 +1,46 @@
 import { Box, Heading, Text, VStack, HStack, Icon, useColorModeValue, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaTrophy, FaServer, FaBrain } from 'react-icons/fa';
+import { FaTrophy, FaRobot, FaShieldAlt, FaServer, FaBrain } from 'react-icons/fa';
 
 const MotionBox = motion(Box);
 
-// Meilleures réalisations (projets concrets)
 const ACHIEVEMENTS = [
-  {
-    title: "⚡ Optimisation d'API IA",
-    description: "Réduction du temps de réponse d’une API de Machine Learning de 200ms à 50ms.",
-    icon: FaBrain,
-    image: "/ai-performance.jpg",
-    details: "Passage à un système de mise en cache avancé et parallélisation des traitements.",
-  },
-  {
-    title: "🚀 Infrastructure Cloud évolutive",
-    description: "Mise en place d’un backend scalable capable de gérer 10x plus d’utilisateurs.",
-    icon: FaServer,
-    image: "/cloud-infra.jpg",
-    details: "Déploiement Kubernetes avec auto-scaling et architecture microservices.",
-  },
-  {
-    title: "🏆 Automatisation KYC FinTech",
-    description: "Développement d'une API de vérification d’identité automatisée.",
-    icon: FaTrophy,
-    image: "/kyc-automation.jpg",
-    details: "Intégration d’un OCR et d’un système de validation multi-étapes pour conformité.",
-  },
-];
+    {
+      title: "🎓 Un parcours d'excellence à 42",
+      description: "6ᵉ de ma promotion à l'école 42, avec un parcours intense du niveau 0 au niveau 20 en seulement 2 ans.",
+      icon: FaBrain,
+      image: "/42.png",
+      details: "J’ai également remporté le championnat 2017 du seul projet algorithmique avancé de l’école (Corewar Championship), démontrant mes compétences en optimisation et en résolution de problèmes complexes.",
+    },
+    {
+      title: "🚀 Une expertise complète & transversale",
+      description: "Expérience réussie en Backend, DevOps, API, Machine Learning et Développement Fullstack.",
+      icon: FaServer,
+      image: "/web-1935737_1280.png",
+      details: "Le site sur lequel vous naviguez est entièrement développé par moi, démontrant ma maîtrise des architectures modernes et des technologies fullstack.",
+    },
+    {
+      title: "🏆 Spécialiste des APIs robustes et performantes",
+      description: "Expertise en APIs Python et C#, avec une approche rigoureuse et des standards de qualité élevés.",
+      icon: FaTrophy,
+      image: "/software-developer-6521720_1280.jpg",
+      details: "J'applique les meilleures pratiques : Design Patterns, Frameworks modernes (FastAPI, Flask, ASP.NET Core), tests unitaires, et sécurité avancée.",
+    },
+    {
+      title: "📈 Automatisation et Intelligence Artificielle",
+      description: "Développement d'**outils IA** pour optimiser les workflows et automatiser des tâches complexes.",      
+      icon: FaRobot,
+      image: "/d43e8792_altxl_v50_20250221_215449_048419_DPM++ 2M_3.png",
+      details: "J’ai contribué à l'optimisation du modèle de reconnaissance vocale de Samsung Bixby, et je développe des outils de génération IA comme FairyTale Stories."    
+    },
+    {
+      title: "🔍 Un code propre, sécurisé et scalable",
+      description: "Maîtrise des principes SOLID, Clean Code, et CI/CD, garantissant des applications maintenables et évolutives.",
+      icon: FaShieldAlt,
+      image: "/security-1163108_1280.jpg",
+      details: "J’implémente des tests automatisés, du chiffrement de données, et une architecture modulaire, assurant des performances optimales et une sécurité renforcée.",
+    },
+  ];
 
 function TrustMe() {
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");

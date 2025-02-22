@@ -1,5 +1,5 @@
-import { Box, Heading, Text, VStack, HStack, Button, useColorModeValue } from '@chakra-ui/react';
-import { FaCode, FaRobot, FaCloud, FaDatabase } from 'react-icons/fa';
+import { Box, Center, Heading, Text, VStack, HStack, Button, useColorModeValue } from '@chakra-ui/react';
+import { FaCode, FaRocket, FaRobot, FaCloud, FaDatabase } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import FallingText from '../components/react-bits/FallingText';
@@ -12,23 +12,26 @@ const MotionBox = motion(Box);
 const SERVICES = [
   {
     title: "Développement Backend sur-mesure",
-    description: "Création et optimisation d’APIs robustes et scalables avec FastAPI, Flask et Django.",
-    icon: FaCode,
+    description: "API **scalable, robuste et documentée** en FastAPI, Flask ou Django. **Réduction des temps de réponse jusqu'à 5x** et intégration rapide avec vos outils existants.",    icon: FaCode,
+    details: "Je crée des architectures robustes et testées, avec une gestion avancée des performances (mise en cache, async, load balancing).",
   },
   {
     title: "Automatisation et Intelligence Artificielle",
-    description: "Mise en place d’algorithmes et d’IA générative pour automatiser vos processus métier.",
-    icon: FaRobot,
+    description: "Automatisez vos tâches avec **l’IA générative et des workflows optimisés**. De l’analyse de données aux assistants virtuels, gagnez en **efficacité et précision**.",    icon: FaRobot,
+    details: "Développement d’outils IA personnalisés (analyse de données, NLP, OCR, prédictions) pour optimiser vos workflows et réduire vos coûts.",
   },
+
   {
     title: "Déploiement et Scalabilité Cloud",
-    description: "Optimisation des architectures serveurs avec Docker, Kubernetes et CI/CD.",
+    description: "Passez à **l’échelle sans downtime** grâce à **Docker, Kubernetes et CI/CD**. Optimisation des coûts cloud et **accélération du déploiement**.",    
     icon: FaCloud,
+    details: "Mise en place d’environnements scalables et automatisés, optimisant les coûts et la sécurité de vos infrastructures.",
   },
   {
-    title: "Optimisation et Sécurisation des Bases de Données",
-    description: "Amélioration des performances et sécurisation des bases PostgreSQL, MongoDB et Redis.",
-    icon: FaDatabase,
+    title: "⚡ Accélération et refonte de code legacy",
+    description: "Réécriture et optimisation de code pour **booster les performances et la maintenabilité de vos applications**.",
+    icon: FaRocket,
+    details: "J’améliore la qualité du code en respectant les standards SOLID, TDD et en adoptant des patterns modernes.",
   },
 ];
 
@@ -36,22 +39,22 @@ function Services() {
   const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
   const accentColor = useColorModeValue("primary.500", "secondary.500");
-  const items = [
-    { content: "Text Item 1" },
-    { content: <p>Paragraph Item 2</p> },
-    { content: "Text Item 3" },
-    { content: <p>Paragraph Item 4</p> },
-    { content: "Text Item 5" },
-    { content: <p>Paragraph Item 6</p> },
-    { content: "Text Item 7" },
-    { content: <p>Paragraph Item 8</p> },
-    { content: "Text Item 9" },
-    { content: <p>Paragraph Item 10</p> },
-    { content: "Text Item 11" },
-    { content: <p>Paragraph Item 12</p> },
-    { content: "Text Item 13" },
-    { content: <p>Paragraph Item 14</p> },
-  ];
+  const items = SERVICES.map((service) => ( { content: service.title}))//[
+//     { content: "Text Item 1" },
+//     { content: <p>Paragraph Item 2</p> },
+//     { content: "Text Item 3" },
+//     { content: <p>Paragraph Item 4</p> },
+//     { content: "Text Item 5" },
+//     { content: <p>Paragraph Item 6</p> },
+//     { content: "Text Item 7" },
+//     { content: <p>Paragraph Item 8</p> },
+//     { content: "Text Item 9" },
+//     { content: <p>Paragraph Item 10</p> },
+//     { content: "Text Item 11" },
+//     { content: <p>Paragraph Item 12</p> },
+//     { content: "Text Item 13" },
+//     { content: <p>Paragraph Item 14</p> },
+//   ];
 
   return (
     <Box bg={bgColor} p={8}>
@@ -88,6 +91,7 @@ function Services() {
                   
                 </Heading>
                 <Text fontSize="md" color={textColor}>
+
                           <DecryptedText
 text={service.description}
 speed={100}
@@ -105,9 +109,14 @@ sequential={true}
         ))}
 
         <Button as={Link} to="/contact" colorScheme="primary" size="lg">
-          Demander un devis
-        </Button>
+        🚀 Besoin de mon aide ? Échangeons sur votre projet !
+                </Button>
         <Box height="150px">
+            <Center>
+        <Text fontSize="2xl" color={textColor}>
+        Un backend optimisé, c'est l’assurance d’un service fiable et scalable dès le premier jour.
+        </Text>
+        </Center>
         <FallingText
         text={`Ne créez pas des services a base de code de mauvaise qualite qui se cassera au premier utilisateur qui utilisera votre service.`}
         highlightWords={["React", "Bits", "animated", "components", "simplify"]}

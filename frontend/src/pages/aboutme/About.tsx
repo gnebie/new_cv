@@ -1,5 +1,5 @@
-import { Box, Flex, Heading, Text, VStack, HStack, Button, useColorModeValue, Divider, Tag } from '@chakra-ui/react';
-import { FaCode, FaRobot, FaRocket, FaUserTie } from 'react-icons/fa';
+import { Box, Flex, Heading, Text, VStack, HStack, Button, useColorModeValue, Divider, Tag, Icon } from '@chakra-ui/react';
+import { FaCode, FaRobot, FaRocket, FaUserTie, FaCheckCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import RotatingText from '../../components/react-bits/RotatingText';
@@ -26,7 +26,8 @@ function About() {
       mt={10}
     >
       <VStack spacing={8} align="start">
-        {/* Header avec Effet 3D */}
+        
+        {/* 🎯 Accroche & Présentation */}
         <MotionBox
           bg={cardColor}
           p={6}
@@ -39,24 +40,65 @@ function About() {
           <Heading color={textColor} size="xl" textAlign="center">
             🚀 Qui suis-je ?
           </Heading>
-          <Flex>
-          <Text fontSize="lg" color={textColor} textAlign="center" mt={3}>
+          <Text fontSize="lg" color={textColor} mt={3} textAlign="center">
             Je suis <strong>Guillaume Nebie</strong>, **freelance expert en Backend Python & Intelligence Artificielle**.  
-            Je conçois des **API robustes**, intègre des **modèles IA avancés** et optimise les **systèmes distribués** 
+            J’aide les entreprises à **développer des API performantes**, à **intégrer des modèles IA avancés**  
+            et à **optimiser leurs infrastructures cloud**.
           </Text>
-
-          </Flex>
-
         </MotionBox>
-        <Text>
-        Moi en quelques chiffres:
-        6 eme de ma promo de 42 de 2016
-        7 ans de code dans des environnements aussi diverse que la finance, le ML, le backend et le devops
-        </Text>
 
-        {/* Section Valeur Ajoutée */}
+        {/* 📜 Mon parcours (Storytelling) */}
         <Heading color={textColor} size="lg">
-          💡 Pourquoi travailler avec moi ?
+          📜 Mon parcours atypique
+        </Heading>
+        <MotionBox
+          bg={cardColor}
+          p={6}
+          borderRadius="lg"
+          boxShadow="lg"
+          width="100%"
+        >
+          <Text fontSize="md" color={textColor}>
+            Tout a commencé loin du code, dans une **cuisine de pâtisserie**. De la rigueur des recettes à la précision  
+            des algorithmes, mon parcours m’a appris une chose essentielle : **peu importe le domaine, c’est la qualité  
+            qui fait la différence**.  
+            Aujourd’hui, j’applique cette même exigence en développement logiciel, où **chaque ligne de code doit être  
+            optimisée et maîtrisée**. Après un parcours à l’École **42 (6ᵉ de ma promo)** et 7 ans d’expérience en  
+            **finance, machine learning, backend & DevOps**, je suis prêt à relever vos défis techniques les plus ambitieux.
+          </Text>
+        </MotionBox>
+
+        {/* 🔥 Chiffres clés */}
+        <Heading color={textColor} size="lg">
+          🔥 Quelques chiffres sur moi
+        </Heading>
+        <HStack spacing={6} wrap="wrap">
+          {[
+            "🎓 6ᵉ de ma promo à 42 (2016)",
+            "💼 +7 ans d'expérience",
+            "🚀 +10 projets en production",
+            "🏆 Vainqueur du Corewar Championship 2017",
+          ].map((fact, index) => (
+            <MotionBox
+              key={index}
+              bg={cardColor}
+              p={4}
+              borderRadius="md"
+              boxShadow="md"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <HStack>
+                <Icon as={FaCheckCircle} color={accentColor} />
+                <Text fontSize="md" color={textColor}>{fact}</Text>
+              </HStack>
+            </MotionBox>
+          ))}
+        </HStack>
+
+        {/* 💡 Pourquoi travailler avec moi ? */}
+        <Heading color={textColor} size="lg">
+          💡 Pourquoi me faire confiance ?
         </Heading>
         <VStack align="start" spacing={5} width="100%">
           <MotionBox
@@ -68,56 +110,55 @@ function About() {
             transition={{ duration: 0.3 }}
             width="100%"
           >
-            <HStack>
-              <FaUserTie color={accentColor} />
-              <FaCode color={accentColor} />
-              <Text fontSize="lg" color={textColor}>
-                
-                <RotatingText
-  texts={[' **Spécialiste Backend & API** - Conception de **microservices** robustes avec **FastAPI, Flask, Django**.', ' **Expertise en IA** - Développement et intégration de modèles **OpenAI, TensorFlow, NLP et Computer Vision**.', ' **Performance & Scalabilité** - Optimisation et mise en production avec **Docker, Kubernetes, CI/CD**.', ' **Accompagnement & Conseil** - Audit, formation et stratégie d’optimisation technique.', 'Formation aux derniers outils de machine learning.']}
-  mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-  staggerFrom={"last"}
-  initial={{ y: "100%", opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  exit={{ y: "-120%", opacity: 0 }}
-  staggerDuration={0.025}
-  animatePresenceMode="wait"
-  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-  transition={{ type: "spring", damping: 30, stiffness: 400 }}
-  rotationInterval={6000}
-/>
-
-              </Text>
-              <FaRobot color={accentColor} />
-              <FaRocket color={accentColor} />
-            </HStack>
+            <RotatingText
+              texts={[
+                "✅ **Spécialiste Backend & API** - Conception de **microservices** robustes avec **FastAPI, Flask, Django**.",
+                "🤖 **Expert en IA** - Intégration de **modèles OpenAI, TensorFlow, NLP et Computer Vision**.",
+                "⚡ **Performance & Scalabilité** - Optimisation et mise en production avec **Docker, Kubernetes, CI/CD**.",
+                "🛠 **Accompagnement & Conseil** - Audit, formation et stratégie d’optimisation technique.",
+              ]}
+              rotationInterval={5000}
+            />
           </MotionBox>
-
-
         </VStack>
 
-        {/* Section Technologies maîtrisées */}
+        {/* 🔧 Technologies maîtrisées */}
         <Divider />
         <Heading color={textColor} size="lg">
           🔧 Technologies Maîtrisées
         </Heading>
         <HStack spacing={3} wrap="wrap">
-          {["Python", "FastAPI", "Flask", "Django", "PostgreSQL", "MongoDB", "Docker", "Kubernetes", "TensorFlow", "PyTorch"].map((tech) => (
+          {[
+            "Python", "FastAPI", "Flask", "REST API", "Microservices",
+            "PostgreSQL", "unix",
+            "Docker",  "bash", "OpenAI API",
+          ].map((tech) => (
             <Tag key={tech} size="lg" variant="subtle" colorScheme="blue">
               {tech}
             </Tag>
           ))}
         </HStack>
 
-        {/* CTA avec Animation */}
-        <MotionBox whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+        {/* 🎯 Call-To-Action */}
+        <MotionBox
+          mt={6}
+          p={6}
+          borderRadius="lg"
+          boxShadow="lg"
+          bg={cardColor}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+          width="100%"
+          textAlign="center"
+        >
           <Text fontSize="lg" color={textColor}>
-            **Vous cherchez un expert en Backend Python & IA ?** Parlons-en !
+            🚀 **Vous avez un projet ambitieux ?** Discutons-en et voyons comment je peux vous aider !
           </Text>
           <Button as={Link} to="/contact" colorScheme="primary" size="lg" mt={3}>
             Me Contacter
           </Button>
         </MotionBox>
+
       </VStack>
     </MotionBox>
   );

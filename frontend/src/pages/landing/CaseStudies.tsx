@@ -5,28 +5,28 @@ const MotionBox = motion(Box);
 
 // Liste des cas d'études
 const CASE_STUDIES = [
-  {
-    client: "Startup FinTech - Automatisation KYC",
-    problem: "Processus de vérification d'identité manuel, lent et sujet aux erreurs.",
-    solution: "Développement d'une API d'automatisation du KYC avec reconnaissance OCR et validation de documents.",
-    results: "+70% de gain de temps, réduction des fraudes et intégration fluide avec le CRM.",
-    techs: ["FastAPI", "OpenAI API", "AWS Lambda", "PostgreSQL", "OCR"],
-  },
-  {
-    client: "Plateforme IA - Optimisation API",
-    problem: "API de Machine Learning trop lente et non scalable.",
-    solution: "Optimisation du code, mise en cache intelligente et passage sur Kubernetes.",
-    results: "Réduction du temps de réponse de 200ms à 50ms, gestion de 10x plus de requêtes simultanées.",
-    techs: ["Python", "TensorFlow", "Redis", "Kubernetes", "Docker"],
-  },
-  {
-    client: "Entreprise e-commerce - Recommandation produit IA",
-    problem: "Faible conversion des recommandations produits sur le site.",
-    solution: "Implémentation d’un moteur de recommandations basé sur le Machine Learning.",
-    results: "+25% de taux de conversion, recommandations dynamiques et personnalisées.",
-    techs: ["Flask", "Scikit-learn", "MongoDB", "NLP"],
-  },
-];
+    {
+      client: "LCH - Extraction de Données",
+      problem: "Besoin d'une **API robuste** pour extraire automatiquement des **données complexes** depuis de multiples sources.",
+      solution: "Développement d'un **module API Spring Boot** optimisé avec une architecture modulaire, et Swagger pour la documentation.",
+      results: "Automatisation du processus, meilleure conformité aux régulations financières.",
+      techs: ["Spring Boot", "PostgreSQL", "JPA", "Hibernate", "Swagger", "Tests Unitaires"],
+    },
+    {
+      client: "Qarnot Computing - SDK de calcul distribué",
+      problem: "Besoin d'un **CLI performant et scalable** pour permettre aux développeurs d'exploiter facilement **la puissance de calcul distribuée sur CPU/GPU**.",
+      solution: "Conception et développement d'un **CLI open-source** en C#, permettant une **utilisation simplifiée des ressources de calcul**.",
+      results: "Adoption du CLI par plusieurs entreprises, meilleure accessibilité aux ressources de calcul haute performance.",
+      techs: ["C#",  "Multithreading", "git", "bash", "Tests Unitaires"],
+    },
+    {
+      client: "Samsung - Reconnaissance vocale pour Bixby",
+      problem: "Manque de **données textuelles francophones** pour entraîner les modèles de reconnaissance vocale de Bixby (Samsung).",
+      solution: "Mise en place d’un **pipeline complet de data engineering**, incluant **scraping de texte, nettoyage et génération automatique de corpus linguistique**.",
+      results: "Augmentation du volume de données francophones disponibles, **amélioration de la précision des modèles NLP**.",
+      techs: ["Python", "TensorFlow", "Pandas", "Kaldi", "Unix", "NLP", "Scraping"],
+    },
+  ];
 
 function CaseStudies() {
   const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");

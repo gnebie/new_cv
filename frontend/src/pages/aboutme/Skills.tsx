@@ -6,35 +6,36 @@ const MotionBox = motion(Box);
 
 // Liste des compétences par catégories
 const SKILLS = [
-  {
-    category: "Backend",
-    technologies: ["Python", "FastAPI", "Flask", "Django", "GraphQL", "gRPC"],
-  },
-  {
-    category: "Intelligence Artificielle",
-    technologies: ["TensorFlow", "PyTorch", "OpenAI API", "LangChain", "NLP", "Computer Vision"],
-  },
-  {
-    category: "DevOps & Cloud",
-    technologies: ["Docker", "Kubernetes", "CI/CD", "Terraform", "AWS", "GCP"],
-  },
-  {
-    category: "Bases de Données",
-    technologies: ["PostgreSQL", "MongoDB", "Redis", "SQLite", "Elasticsearch"],
-  },
-  {
-    category: "Soft Skills",
-    technologies: ["Gestion de projet", "Lead technique", "Travail en équipe", "Résolution de problèmes"],
-  },
-];
-
-// Liste des compétences avancées avec progression
-const ADVANCED_SKILLS = [
-  { skill: "Optimisation Backend", level: 90 },
-  { skill: "Scalabilité & Haute Disponibilité", level: 85 },
-  { skill: "Automatisation IA", level: 80 },
-  { skill: "Sécurité API", level: 75 },
-];
+    {
+      category: "Backend",
+      technologies: ["Python", "FastAPI", "Flask", "Django (Notions)", "REST API", "Microservices"],
+    },
+    {
+      category: "Intelligence Artificielle",
+      technologies: ["TensorFlow", "PyTorch", "OpenAI API", "LangChain", "NLP", "Computer Vision"],
+    },
+    {
+      category: "DevOps & Cloud",
+      technologies: ["Docker", "Kubernetes", "CI/CD", "Linux", "Bash", "Automatisation"],
+    },
+    {
+      category: "Bases de Données",
+      technologies: ["PostgreSQL", "MongoDB", "Redis", "SQLite"],
+    },
+    {
+      category: "Soft Skills",
+      technologies: ["Gestion de projet", "Lead technique", "Travail en équipe", "Résolution de problèmes"],
+    },
+  ];
+  
+  // Liste des compétences avancées avec progression
+  const ADVANCED_SKILLS = [
+    { skill: "Optimisation Backend", level: 90 },
+    { skill: "Scalabilité & Haute Disponibilité", level: 85 },
+    { skill: "Automatisation IA", level: 80 },
+    { skill: "Sécurité API", level: 75 },
+  ];
+  
 
 function Skills() {
   const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");

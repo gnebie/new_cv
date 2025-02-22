@@ -8,19 +8,19 @@ const MotionBox = motion(Box);
 const FEATURES = [
   {
     title: "🔧 Backend & API sur-mesure",
-    description: "Développement de **microservices performants**, optimisés pour la scalabilité.",
+    description: "Développement de microservices performants, optimisés pour la scalabilité. Optimisation d'API rapides et sécurisées, capables de gérer des milliers d'utilisateurs.",
     icon: FaCode,
     image: "/code-944499_1280.jpg",
   },
   {
-    title: "🚀 Scalabilité & Performance",
-    description: "Optimisation d'**API rapides et sécurisées**, capables de gérer des milliers d'utilisateurs.",
+    title: "🚀 Integration d'outils IA ",
+    description: "Intégration d'outils IA Que ce soit texte, images ou son",
     icon: FaRocket,
     image: "/blockchain-3537389_1280.jpg",
   },
   {
     title: "🤝 Accompagnement & Stratégie",
-    description: "Conseils techniques, architecture et intégration IA **sur-mesure pour votre projet**.",
+    description: "Conseils techniques, architecture et formations IA sur-mesure pour votre projet ou votre équipe.",
     icon: FaUserTie,
     image: "/code-8779047_1280.jpg",
   },

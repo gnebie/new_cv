@@ -8,32 +8,46 @@ const MotionBox = motion(Box);
 const EXPERIENCES = [
   {
     role: "Développeur Backend Python & IA",
-    company: "Freelance",
+    company: "Projet personnel",
     date: "2022 - Aujourd'hui",
-    description: "Développement d'APIs performantes et intégration d'intelligence artificielle pour l'automatisation des processus métiers.",
-    techs: ["FastAPI", "Flask", "PostgreSQL", "Docker", "Kubernetes", "TensorFlow", "OpenAI"],
+    description: "Développement d’APIs performantes et intégration d’intelligence artificielle pour automatiser les processus métiers. Travail sur des architectures microservices et scalabilité.",
+    techs: ["FastAPI", "SQLModel", "React", "Chakra UI", "Redis", "PostgreSQL", "Kubernetes", "Docker", "Stable Diffusion", "ChatGPT", "Stripe"],
   },
   {
-    role: "Ingénieur Backend & Data",
+    role: "Développeur Backend & API",
+    company: "LCH (London Clearing House) - LSEG",
+    date: "10/2021 - 01/2024",
+    description: "Développement d’une application de validation de données et d’un module API de récupération sous Java. Mise en place d’une architecture modulaire pour l’extension des fonctionnalités.",
+    techs: ["Python", "Flask", "Java", "Spring Boot", "Spring Batch", "Hibernate", "JPA", "Swagger", "PostgreSQL", "Angular", "Git"],
+  },
+  {
+    role: "Ingénieur Logiciel",
     company: "Qarnot Computing",
-    date: "2019 - 2021",
-    description: "Conception et optimisation d'un SDK open-source pour le calcul distribué sur CPU/GPU dans le cloud.",
-    techs: ["Python", "FastAPI", "MongoDB", "C#", "Kubernetes"],
+    date: "10/2019 - 10/2021",
+    description: "Développement et maintenance des SDK open-source pour le calcul distribué (C#, NodeJS, Python). Création d’un CLI pour l’API de calculs de Qarnot et test de modèles ML sur les machines Qarnot.",
+    techs: ["Python", "C#", "NodeJS", "Bash", "Docker", "Linux", "Git", "TensorFlow", "PyTorch"],
   },
   {
-    role: "Développeur IA & Data Engineer",
-    company: "Harman / Samsung",
-    date: "2019",
-    description: "Création de pipelines de data engineering et implémentation d'algorithmes de Machine Learning pour l'analyse audio.",
-    techs: ["Python", "Pandas", "TensorFlow", "PostgreSQL"],
+    role: "Data Engineer - Machine Learning",
+    company: "Harman / Samsung - Bixby2",
+    date: "02/2019 - 08/2019",
+    description: "Développement d’outils de nettoyage et de génération de corpus de texte. Création d’un modèle ASR personnalisé avec TensorFlow/Kaldi et phonétisation automatique.",
+    techs: ["Python", "Pandas", "TensorFlow", "Kaldi", "PostgreSQL", "Unix", "Linux", "Git"],
   },
   {
-    role: "Développeur API & Data",
-    company: "LCH (London Clearing House)",
-    date: "2021 - 2024",
-    description: "Développement d'APIs bancaires pour l'extraction et la validation de données financières complexes.",
-    techs: ["Spring Boot", "PostgreSQL", "Docker", "Java"],
+    role: "Développeur Chatbot & API",
+    company: "The Chatbot Factory",
+    date: "06/2017 - 12/2017",
+    description: "Développement de chatbots intelligents pour divers cas d’usage (FAQ, formation, conseil, jeu) avec des arbres décisionnels non linéaires et NLP.",
+    techs: ["NodeJS", "ReactJS", "NLP", "PHP", "Git", "Trello"],
   },
+  {
+    role: "Étudiant - Développeur Algorithmique",
+    company: "École 42",
+    date: "2016 - 2018",
+    description: "Formation intense en algorithmie et développement bas niveau. Développement de projets en C, création d’un shell POSIX et d’une machine virtuelle Corewar.",
+    techs: ["C", "Python", "OCaml", "Rust", "Shell Scripting", "Git", "Unix"],
+  }
 ];
 
 function Experience() {
