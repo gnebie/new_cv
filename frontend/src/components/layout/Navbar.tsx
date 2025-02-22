@@ -27,7 +27,7 @@ function Navbar() {
   const bgColor = useColorModeValue("transparent", "transparent"); // ✅ Permet de voir l'Aurora derrière
   const textColor = useColorModeValue("text.dark.primary", "text.dark.primary");
   const hoverColor = useColorModeValue("secondary.500", "secondary.400");
-  const auroraColors = useColorModeValue(
+  const auroraColors:  [string, string, string] = useColorModeValue(
     ["#3A29FF", "#FF94B4", "#FF3232"], // 🎨 Mode Clair
     ["#00FFAA", "#3300FF", "#8800FF"]  // 🎨 Mode Sombre
   );
@@ -54,7 +54,7 @@ function Navbar() {
       </Box>
 
         {/* Logo */}
-        <RouterLink to="/" fontSize="lg" mb={2}>
+        <RouterLink to="/">
           <Text fontSize="xl" fontWeight="bold" cursor="pointer" _hover={{ color: hoverColor }}>
             NEBIE Guillaume
           </Text>

@@ -73,7 +73,7 @@ function Portfolio() {
 
   return (
     <Box bg={bgColor}>
-    <Box zIndex={1} width="100%"  position='realtive'>
+    <Box zIndex={1} width="100%"  position='relative'>
         <Box zIndex={1} width= '100%' height= '80vh' position= 'fixed' top="50px">
         
         <Particles

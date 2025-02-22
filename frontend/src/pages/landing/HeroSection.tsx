@@ -64,10 +64,12 @@ function HeroSection() {
         {/* <Box width="300px">
           <Lottie animationData={heroAnimation} loop={true} />
         </Box> */}
+      <Link  to="/contact">
 
-        <StarBorder as={Link} to="/contact" size="lg" mt={4}>
+        <StarBorder>
           🚀 Discutons de votre projet
         </StarBorder>
+        </Link>
       </VStack>
     </MotionBox>
   );

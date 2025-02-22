@@ -49,7 +49,7 @@ function Services() {
 
   return (
     <Box bg={bgColor}>
-<Box zIndex={1} width="100%"  position='realtive'>
+<Box zIndex={1} width="100%"  position='relative'>
 <Box zIndex={1} width= '100%' height= '80vh' position= 'fixed' top="50px">
 
 <Threads
@@ -91,7 +91,7 @@ function Services() {
       delay={150}
       animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
       animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-      easing="easeOutCubic"
+    //   easing="easeOutCubic"
       threshold={0.2}
       rootMargin="-50px"
       />

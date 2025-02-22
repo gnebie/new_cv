@@ -10,7 +10,7 @@ function DetailedSection() {
     <Box padding="4rem" bg={bgColor}>
       <VStack spacing={4} align="start">
         <Flex>
-        <Image src="/public/portrait.png" borderRadius="full" boxSize="80px" marginX={10}/>
+        <Image src="/portrait.png" borderRadius="full" boxSize="80px" marginX={10}/>
         <Box>
           <Heading fontSize="3xl">À propos de moi</Heading>
           <Text fontSize="lg" ref={containerRef}>

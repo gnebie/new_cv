@@ -76,15 +76,14 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
     const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
 
     const splitIntoCharacters = (text: string): string[] => {
-      if (typeof Intl !== "undefined" && Intl.Segmenter) {
-        const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
-        return Array.from(
-          segmenter.segment(text),
-          (segment) => segment.segment
-        );
-      }
-      return Array.from(text);
-    };
+        if (typeof Intl !== "undefined" && (Intl as any).Segmenter) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const segmenter = new (Intl as any).Segmenter("en", { granularity: "grapheme" });
+          return Array.from(segmenter.segment(text), (segment) => (segment as { segment: string }).segment);
+        }
+        return Array.from(text);
+      };
+      
 
     const elements = useMemo(() => {
       const currentText: string = texts[currentTextIndex];

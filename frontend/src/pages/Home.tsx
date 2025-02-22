@@ -41,7 +41,7 @@ function Home() {
         
         opacity="0.4" // 💡 Ajuste la transparence si besoin
       >
-        <Image src="/public/illustration_home_2.png" width="20000px"       height="70vh"
+        <Image src="/illustration_home_2.png" width="20000px"       height="70vh"
         />
       </Box>
       <Box position="relative">

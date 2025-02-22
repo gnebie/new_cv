@@ -4,7 +4,7 @@ import { Renderer, Program, Mesh, Triangle, Color } from "ogl";
 import './Threads.css';
 
 interface ThreadsProps {
-  color?: [number, number, number];
+  color?: [number, number, number] | [string, string, string];
   amplitude?: number;
   distance?: number;
   enableMouseInteraction?: boolean;
@@ -125,7 +125,7 @@ void main() {
 `;
 
 const Threads: React.FC<ThreadsProps> = ({
-  color = [1, 1, 1],
+  color = ["white","white","white"],
   amplitude = 1,
   distance = 0,
   enableMouseInteraction = false,

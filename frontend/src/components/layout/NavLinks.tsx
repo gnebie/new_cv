@@ -16,7 +16,7 @@ export function NavLinks({ isMobile = false }: { isMobile?: boolean }) {
     return (
       <VStack spacing={4} align="start">
         {NAV_LINKS.map((link) => (
-        <RouterLink to={link.href} key={link.href} fontSize="lg" mb={2}>
+        <RouterLink to={link.href} key={link.href}>
                    <GradientText
   colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
   animationSpeed={3}

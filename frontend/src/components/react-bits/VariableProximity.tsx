@@ -1,5 +1,5 @@
-import { forwardRef, useMemo, useRef, useEffect, RefObject } from "react";
-import { motion } from "framer-motion";
+import { forwardRef, useMemo, useRef, useEffect, RefObject, Key, JSXElementConstructor, ReactElement, ReactNode, ReactPortal } from "react";
+import { motion, MotionValue } from "framer-motion";
 import "./VariableProximity.css";
 
 type Callback = () => void;
@@ -159,12 +159,13 @@ const VariableProximity = forwardRef<HTMLSpanElement, VariableProximityProps>((p
             style={{ display: "inline", ...style }}
             {...restProps}
         >
-            {words.map((word, wordIndex) => (
+            {words.map((word: string, wordIndex: Key | null | undefined) => (
                 <span
                     key={wordIndex}
                     style={{ display: "inline-block", whiteSpace: "nowrap" }}
                 >
-                    {word.split("").map((letter) => {
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
+                    {word.split("").map((letter: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | MotionValue<number> | MotionValue<string> | null | undefined) => {
                         const currentLetterIndex = letterIndex++;
                         return (
                             <motion.span
@@ -181,7 +182,7 @@ const VariableProximity = forwardRef<HTMLSpanElement, VariableProximityProps>((p
                             </motion.span>
                         );
                     })}
-                    {wordIndex < words.length - 1 && (
+                    {wordIndex != undefined && (wordIndex as number) < words.length - 1 && (
                         <span style={{ display: "inline-block" }}>&nbsp;</span>
                     )}
                 </span>

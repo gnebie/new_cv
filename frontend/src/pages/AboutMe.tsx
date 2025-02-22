@@ -37,7 +37,7 @@ function AboutMe() {
             <AccordionPanel pb={4}>
             <Center>
                 <Image maxW="200px" width="100%"
-                src="public/portrait.png"
+                src="/portrait.png"
                 fit="contain"
                 />
             </Center>

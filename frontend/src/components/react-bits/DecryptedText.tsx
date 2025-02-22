@@ -56,6 +56,7 @@ export default function DecryptedText({
 
     useEffect(() => {
         let interval: number;
+
         let currentIteration = 0
 
         const getNextIndex = (revealedSet: Set<number>): number => {
@@ -131,7 +132,7 @@ export default function DecryptedText({
 
         if (isHovering) {
             setIsScrambling(true)
-            interval = setInterval(() => {
+            interval = ((setInterval(() => {
                 setRevealedIndices((prevRevealed) => {
                     if (sequential) {
                         if (prevRevealed.size < text.length) {
@@ -156,7 +157,7 @@ export default function DecryptedText({
                         return prevRevealed
                     }
                 })
-            }, speed)
+            }, speed) as unknown ) as number)
         } else {
             setDisplayText(text)
             setRevealedIndices(new Set())
