@@ -25,7 +25,7 @@ function Navbar() {
   const bgLogoColor = useColorModeValue("background.light", "background.dark");
 
   const bgColor = useColorModeValue("transparent", "transparent"); // ✅ Permet de voir l'Aurora derrière
-  const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
+  const textColor = useColorModeValue("text.dark.primary", "text.dark.primary");
   const hoverColor = useColorModeValue("secondary.500", "secondary.400");
   const auroraColors = useColorModeValue(
     ["#3A29FF", "#FF94B4", "#FF3232"], // 🎨 Mode Clair
@@ -35,9 +35,6 @@ function Navbar() {
   return (
     <Box position="relative">
       {/* Aurora en arrière-plan */}
-      <Box position="absolute" top="0" left="0" width="100%" height="100%" zIndex="-1">
-        <Aurora colorStops={auroraColors} speed={0.5} />
-      </Box>
 
       <Flex
         as="nav"
@@ -52,6 +49,10 @@ function Navbar() {
         width="100%"
         zIndex="1000"
       >
+      <Box position="absolute" top="0" left="0" width="100%" height="100%" zIndex="-1">
+        <Aurora colorStops={auroraColors} speed={0.5} />
+      </Box>
+
         {/* Logo */}
         <RouterLink to="/" fontSize="lg" mb={2}>
           <Text fontSize="xl" fontWeight="bold" cursor="pointer" _hover={{ color: hoverColor }}>

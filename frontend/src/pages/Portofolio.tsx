@@ -1,5 +1,6 @@
 import { Box, Heading, Text, VStack, HStack, Image, Button, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import Particles from '../components/react-bits/Particles';
 
 const MotionBox = motion(Box);
 
@@ -9,24 +10,57 @@ const PROJECTS = [
     name: "FairyTale Stories",
     description: "Web-app interactive permettant de générer des histoires personnalisées en temps réel avec IA.",
     techs: ["FastAPI", "React", "Stable Diffusion", "PostgreSQL", "Kubernetes"],
-    image: "/images/fairytale_stories.png",  // Image illustrative
+    image: "/fairytale_stories_site.png", 
     github: "https://github.com/gnebie/fairytale-stories",
-    // demo: "https://fairytale-ai-demo.com",
+    site: "https://fairytale-stories.nebie.fr/",
   },
   {
-    name: "SDK de calcul distribué",
-    description: "Développement d'un SDK open-source pour gérer du calcul distribué sur CPU/GPU.",
-    techs: ["Python", "FastAPI", "C#", "Docker", "Kubernetes"],
-    image: "/images/qarnot_sdk.png",
-    github: "https://github.com/gnebie/qarnot-sdk",
+    name: "Pretty souls Instagram",
+    description: "Echantillon d'image generees pr moi meme utilisant differents themes .",
+    techs: ["Stable Diffusion", ],
+    image: "/instagram_prettysouls.png", 
+    // github: "https://github.com/gnebie/fairytale-stories",
+    site: "https://www.instagram.com/pretty.soul.2042/",
   },
   {
-    name: "API de gestion d'utilisateurs",
-    description: "API REST robuste avec gestion avancée des utilisateurs et authentification JWT.",
-    techs: ["Django", "PostgreSQL", "Redis", "CI/CD"],
-    image: "/images/user_management.png",
-    github: "https://github.com/gnebie/user-management-api",
+    name: "N8n Conversational agent",
+    description: "Creation d'agent conversationels locaux et personnalisables pour les documents internes.",
+    techs: ["n8n","IA Agent", "IA Integration", "Chatgpt", "LowCode" ],
+    image: "/n8n_agent.png", 
+    // github: "https://github.com/gnebie/fairytale-stories",
+    // site: "https://www.instagram.com/pretty.soul.2042/",
   },
+  {
+    name: "Python CLI",
+    description: "Python CLi to easly connect to an api.",
+    techs: ["bash", "python", "CLI", "docker",  ],
+    image: "/cli_auto.png", 
+    github: "https://github.com/gnebie/stable_diffusion_1111_sdk",
+    // site: "https://www.instagram.com/pretty.soul.2042/",
+  },
+  {
+    name: "Web inseptions",
+    description: "This website.",
+    techs: ["React", "Typescript", "docker", "docker-compose",  ],
+    image: "/this_website.png", 
+    github: "https://github.com/gnebie/new_cv",
+    // site: "https://www.instagram.com/pretty.soul.2042/",
+  },
+  //
+//   {
+//     name: "SDK de calcul distribué",
+//     description: "Développement d'un SDK open-source pour gérer du calcul distribué sur CPU/GPU.",
+//     techs: ["Python", "FastAPI", "C#", "Docker", "Kubernetes"],
+//     image: "/images/qarnot_sdk.png",
+//     github: "https://github.com/gnebie/qarnot-sdk",
+//   },
+//   {
+//     name: "API de gestion d'utilisateurs",
+//     description: "API REST robuste avec gestion avancée des utilisateurs et authentification JWT.",
+//     techs: ["Django", "PostgreSQL", "Redis", "CI/CD"],
+//     image: "/images/user_management.png",
+//     github: "https://github.com/gnebie/user-management-api",
+//   },
 ];
 
 function Portfolio() {
@@ -34,10 +68,29 @@ function Portfolio() {
   const cardColor = useColorModeValue("white", "gray.800");
   const textColor = useColorModeValue("gray.800", "white");
   const accentColor = useColorModeValue("blue.500", "cyan.400");
+  const particuleColor1 = useColorModeValue("primary.100", "#FFFFFF");
+  const particuleColor2 = useColorModeValue("secondary.100", "#FFFFFF");
 
   return (
-    <Box bg={bgColor} py={16} px={8}>
-      <VStack spacing={12} align="stretch">
+    <Box bg={bgColor}>
+    <Box zIndex={1} width="100%"  position='realtive'>
+        <Box zIndex={1} width= '100%' height= '80vh' position= 'fixed' top="50px">
+        
+        <Particles
+        particleColors={[particuleColor1, particuleColor2]}
+        particleCount={200}
+        particleSpread={10}
+        speed={0.1}
+        particleBaseSize={100}
+        moveParticlesOnHover={true}
+        alphaParticles={false}
+        disableRotation={false}
+        />
+        
+        </Box>
+        </Box>   
+        <Box py={16} px={8}>
+        <VStack spacing={12} align="stretch">
         {/* Titre */}
         <Heading color={textColor} size="xl" textAlign="center">
           🎨 Mon Portfolio
@@ -50,6 +103,8 @@ function Portfolio() {
               key={index}
               bg={cardColor}
               p={6}
+              zIndex={2} position="sticky"
+
               borderRadius="lg"
               boxShadow="lg"
               width={{ base: "100%", md: "45%", lg: "30%" }}
@@ -75,12 +130,13 @@ function Portfolio() {
 
               {/* Liens GitHub et Démo */}
               <HStack spacing={4}>
+              {project.github && (
                 <Button as="a" href={project.github} target="_blank" colorScheme="gray">
                   GitHub
-                </Button>
-                {project.demo && (
-                  <Button as="a" href={project.demo} target="_blank" colorScheme="blue">
-                    Voir la démo
+                </Button>)}
+                {project.site && (
+                  <Button as="a" href={project.site} target="_blank" colorScheme="blue">
+                    Voir le site
                   </Button>
                 )}
               </HStack>
@@ -88,8 +144,9 @@ function Portfolio() {
           ))}
         </HStack>
       </VStack>
-    </Box>
-  );
+      </Box>
+      </Box>
+    );
 }
 
 export default Portfolio;

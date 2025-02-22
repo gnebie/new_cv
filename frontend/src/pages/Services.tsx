@@ -6,8 +6,10 @@ import FallingText from '../components/react-bits/FallingText';
 import InfiniteScroll from '../components/react-bits/InfiniteScroll';
 import SplitText from '../components/react-bits/SplitText';
 import DecryptedText from '../components/react-bits/DecryptedText';
+import Threads from '../components/react-bits/Threads';
 
 const MotionBox = motion(Box);
+
 
 const SERVICES = [
   {
@@ -36,30 +38,34 @@ const SERVICES = [
 ];
 
 function Services() {
-  const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
+    const bgColor = useColorModeValue("surface.light.100", "surface.dark.100");
+    const cardColor = useColorModeValue("surface.light.200", "surface.dark.200");
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
   const accentColor = useColorModeValue("primary.500", "secondary.500");
+  const threadColor1 = useColorModeValue("primary.100", "secondary.100");
+  const threadColor2 = useColorModeValue("primary.500", "secondary.500");
+  const threadColor3 = useColorModeValue("primary.900", "secondary.900");
   const items = SERVICES.map((service) => ( { content: service.title}))//[
-//     { content: "Text Item 1" },
-//     { content: <p>Paragraph Item 2</p> },
-//     { content: "Text Item 3" },
-//     { content: <p>Paragraph Item 4</p> },
-//     { content: "Text Item 5" },
-//     { content: <p>Paragraph Item 6</p> },
-//     { content: "Text Item 7" },
-//     { content: <p>Paragraph Item 8</p> },
-//     { content: "Text Item 9" },
-//     { content: <p>Paragraph Item 10</p> },
-//     { content: "Text Item 11" },
-//     { content: <p>Paragraph Item 12</p> },
-//     { content: "Text Item 13" },
-//     { content: <p>Paragraph Item 14</p> },
-//   ];
 
   return (
-    <Box bg={bgColor} p={8}>
+    <Box bg={bgColor}>
+<Box zIndex={1} width="100%"  position='realtive'>
+<Box zIndex={1} width= '100%' height= '80vh' position= 'fixed' top="50px">
+
+<Threads
+  amplitude={5}
+  distance={0}
+  enableMouseInteraction={true}
+  color={[threadColor1,threadColor2,threadColor3]}
+/>
+
+</Box>
+</Box>
+
+    <Box p={8} >
+
       <VStack spacing={12} align="stretch">
-        <Heading color={textColor} size="xl" textAlign="center">
+        <Heading color={textColor} size="xl" textAlign="center" >
           🔧 En quoi puis je vous aider ?
         </Heading>
 
@@ -67,7 +73,9 @@ function Services() {
         {SERVICES.map((service, index) => (
           <MotionBox
             key={index}
+            bg={cardColor}
             p={6}
+            zIndex={2} position="sticky"
             borderRadius="lg"
             boxShadow="lg"
             whileHover={{ scale: 1.02 }}
@@ -96,7 +104,7 @@ function Services() {
 text={service.description}
 speed={100}
 animateOn="view"
-maxIterations={10}
+maxIterations={5}
 revealDirection="start"
 sequential={true}
 />
@@ -108,19 +116,20 @@ sequential={true}
           </MotionBox>
         ))}
 
-        <Button as={Link} to="/contact" colorScheme="primary" size="lg">
+        <Button as={Link} to="/contact" colorScheme="primary" size="lg" zIndex={2} position="sticky">
         🚀 Besoin de mon aide ? Échangeons sur votre projet !
                 </Button>
-        <Box height="150px">
-            <Center>
+        <Box  bg={bgColor} zIndex={2} position="sticky">
+        <Center>
         <Text fontSize="2xl" color={textColor}>
         Un backend optimisé, c'est l’assurance d’un service fiable et scalable dès le premier jour.
         </Text>
         </Center>
+        <Box height="300px">
         <FallingText
-        text={`Ne créez pas des services a base de code de mauvaise qualite qui se cassera au premier utilisateur qui utilisera votre service.`}
-        highlightWords={["React", "Bits", "animated", "components", "simplify"]}
-        highlightClass="highlighted"
+        text={`Ne créez pas des services a base de code de mauvaise qualite qui se cassera au premier utilisateur qui testera votre service.`}
+        // highlightWords={["services", "mauvaise", "qualite", "cassera", "utilisateur"]}
+        // highlightClass="highlighted"
         trigger="hover"
         backgroundColor="transparent"
         wireframes={false}
@@ -129,8 +138,9 @@ sequential={true}
         mouseConstraintStiffness={0.9}
         />
         </Box>
+        </Box>
   
-        <Box style={{height: '500px', position: 'relative'}}>
+        <Box style={{height: '500px', position: 'relative'}} zIndex={2} bg={bgColor}>
         <InfiniteScroll
             items={items}
             isTilted={true}
@@ -142,6 +152,7 @@ sequential={true}
         />
         </Box>
       </VStack>
+    </Box>
     </Box>
   );
 }

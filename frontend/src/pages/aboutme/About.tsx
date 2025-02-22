@@ -9,13 +9,14 @@ const MotionBox = motion(Box);
 
 function About() {
   const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
-  const cardColor = useColorModeValue("white", "surface.dark.100");
+  const bgColor2 = useColorModeValue("surface.light.300", "surface.dark.300");
+  const cardColor = useColorModeValue("surface.light.100", "surface.dark.100");
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
   const accentColor = useColorModeValue("primary.500", "secondary.500");
 
   return (
     <MotionBox
-      bg={bgColor}
+      bg={bgColor2}
       p={8}
       borderRadius="lg"
       boxShadow="xl"

@@ -6,10 +6,11 @@ import { motion } from "framer-motion";
 import ChatSection from '../components/chat/ChatSection';
 import MagnetLines from '../components/react-bits/MagnetLines'
 import { Helmet } from "react-helmet";
-
+import { useContactForm } from "../hooks/useContactForm";
+import { SiMalt } from "react-icons/si"; // Import de l'icône Malt
 import FAQ from "./FAQ";
 import SplashCursor from "../components/react-bits/SplashCursor";
-import BlobCursor from "../components/react-bits/BlobCursor";
+// import BlobCursor from "../components/react-bits/BlobCursor";
 const MotionBox = motion(Box);
 
 function Contact() {
@@ -18,18 +19,18 @@ function Contact() {
   const iconHoverColor = useColorModeValue("primary.500", "secondary.500");
 
   // Gestion du formulaire
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+//   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+//   const [isSubmitted, setIsSubmitted] = useState(false);
+    const { formData, isSubmitting, isSubmitted, error, handleChange, handleSubmit } = useContactForm();
+//   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-  };
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     setIsSubmitted(true);
+//     setTimeout(() => setIsSubmitted(false), 3000);
+//   };
 
   return (
     <Box position="relative" width="100%" margin="auto">
@@ -73,6 +74,10 @@ function Contact() {
     >
       <VStack spacing={6} align="center">
         <Heading color={textColor}>Me Contacter</Heading>
+        <Button as="a" href="/Nebie_Guillaume_CV.pdf" download colorScheme="primary">
+        📄 Télécharger mon CV (PDF)
+        </Button>
+
         <Text fontSize="lg" color={textColor}>N'hésitez pas à me contacter via mes réseaux ou le formulaire ci-dessous.</Text>
 
         {/* Icônes des réseaux sociaux */}
@@ -83,17 +88,18 @@ function Contact() {
           <Link href="https://github.com/gnebie" isExternal>
             <IconButton aria-label="GitHub" icon={<FaGithub />} size="lg" variant="ghost" _hover={{ color: iconHoverColor }} />
           </Link>
+          <Link href="https://www.malt.fr/profile/guillaumenebie" isExternal>
+            <IconButton aria-label="Malt" icon={<SiMalt />} size="lg" variant="ghost" _hover={{ color: iconHoverColor }} />
+        </Link>
           <Link href="mailto:guillaumelale@gmail.com">
             <IconButton aria-label="Email" icon={<FaEnvelope />} size="lg" variant="ghost" _hover={{ color: iconHoverColor }} />
           </Link>
         </HStack>
-        <h2 color={textColor}>Discuter avec mon avatar virtuel</h2>
 
       <ChatSection />
 
-      <h2 color={textColor}>Envoyer moi un mail</h2>
+      <h2 color={textColor}>Envoyez moi un mail ou discutez avec mon avatar</h2>
 
-        {/* Formulaire de contact */}
         <Box as="form" width="100%" onSubmit={handleSubmit}>
           <VStack spacing={4}>
             <Input
@@ -118,9 +124,10 @@ function Contact() {
               onChange={handleChange}
               bg={useColorModeValue("surface.light.100", "surface.dark.100")}
             />
-            <Button type="submit" colorScheme="primary" size="lg" width="100%" isDisabled={isSubmitted}>
-              {isSubmitted ? "Message envoyé ✅" : "Envoyer"}
+            <Button type="submit" colorScheme="primary" size="lg" width="100%" isDisabled={isSubmitting}>
+                {isSubmitted ? "Message envoyé ✅" : isSubmitting ? "Envoi en cours..." : "Envoyer"}
             </Button>
+            {error && <Text color="red.500">{error}</Text>}
           </VStack>
         </Box>
         <FAQ />

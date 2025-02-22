@@ -2,10 +2,10 @@ import { Box, Heading, Text, Accordion, AccordionItem, AccordionButton, Accordio
 import CircularText from '../components/react-bits/CircularText';
 
 const QUESTIONS = [
-  { question: "Quel est ton tarif horaire ?", answer: "Je fonctionne principalement en forfait projet, mais mon TJM est de X€." },
-  { question: "Peux-tu travailler sur un projet existant ?", answer: "Oui, je peux reprendre et optimiser un backend existant." },
-  { question: "Quels sont tes délais habituels ?", answer: "Tout dépend du projet, mais en moyenne, un projet prend 2 à 6 semaines." },
-];
+    { question: "Ou suis je? Ou puis travailler?", answer: "Je suis sur Paris, mais suivant la mission peut me déplacer aux alentours, habitué des outils de travail à distance, je peux aussi télétravailler sans problèmes." },
+    { question: "Peux-tu travailler sur un projet existant ?", answer: "Oui, je peux reprendre et optimiser un backend existant." },
+    { question: "Quels sont tes délais habituels ?", answer: "Tout dépend du projet, je propose qu'on en discute en direct." },
+  ];
 
 function FAQ() {
   const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");

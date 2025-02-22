@@ -14,18 +14,17 @@ import {
   HStack,
   Text,
   Badge,
+  Spinner,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaCommentDots } from "react-icons/fa";
+import { useChat } from "../../hooks/useChat";
 
-// Exemple de messages par défaut (peut être connecté à un vrai backend)
-const INITIAL_MESSAGES = [
-  { sender: "bot", text: "Bonjour !  Je ne suis pas en ligne mais ma version virtuelle l'est et peux repondre a la majrité des questions sur mes capacitees et mon parcours. Comment puis-je vous aider ?" },
-];
 
 function Chatbot() {
+  const { chatLog, sendMessage, loading } = useChat();
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState(INITIAL_MESSAGES);
+  // const [chatLog, setMessages] = useState(INITIAL_MESSAGES);
   const [userInput, setUserInput] = useState("");
   const [hasNewMessage, setHasNewMessage] = useState(true);
   const [showPreview, setShowPreview] = useState(false);
@@ -38,18 +37,24 @@ function Chatbot() {
     setHasNewMessage(false);
   };
 
-  const sendMessage = () => {
+  const handleSendMessage = () => {
     if (!userInput.trim()) return;
-    setMessages([...messages, { sender: "user", text: userInput }]);
+    sendMessage(userInput);
     setUserInput("");
-
-    // Simuler une réponse du bot (à remplacer par un appel API)
-    setTimeout(() => {
-      const botMessage = { sender: "bot", text: "Merci pour votre message ! Le chat n'est pas encore actif, Je vous réponds bientôt." };
-      setMessages((prev) => [...prev,botMessage,]);
-      setHasNewMessage(true);
-    }, 1000);
   };
+
+  // const sendMessage = () => {
+  //   if (!userInput.trim()) return;
+  //   setMessages([...messages, { sender: "user", text: userInput }]);
+  //   setUserInput("");
+
+  //   // Simuler une réponse du bot (à remplacer par un appel API)
+  //   setTimeout(() => {
+  //     const botMessage = { sender: "bot", text: "Merci pour votre message ! Le chat n'est pas encore actif, Je vous réponds bientôt." };
+  //     setMessages((prev) => [...prev,botMessage,]);
+  //     setHasNewMessage(true);
+  //   }, 1000);
+  // };
 
   return (
     <>
@@ -60,9 +65,10 @@ function Chatbot() {
         right="20px"
         onMouseEnter={() => setShowPreview(true)} // ✅ Affiche l'aperçu du dernier message
         onMouseLeave={() => setShowPreview(false)} // ✅ Cache l'aperçu quand on éloigne la souris
+        zIndex={2}
       >
         {/* APERÇU DU DERNIER MESSAGE AU SURVOL */}
-        {showPreview && messages.length > 0 && (
+        {showPreview && chatLog.length > 0 && (
           <Box
             position="absolute"
             bottom="60px"
@@ -78,7 +84,7 @@ function Chatbot() {
             minWidth="200px"
             maxWidth="800px"
           >
-            <Text fontSize="sm">{messages[messages.length - 1].text}</Text>
+            <Text fontSize="sm">{chatLog[chatLog.length - 1].text}</Text>
           </Box>
         )}
 
@@ -126,7 +132,7 @@ function Chatbot() {
           {/* ZONE DE MESSAGES */}
           <ModalBody>
             <VStack spacing={3} align="start" height="300px" overflowY="auto">
-              {messages.map((msg, index) => (
+              {chatLog.map((msg, index) => (
                 <HStack key={index} alignSelf={msg.sender === "user" ? "flex-end" : "flex-start"}>
                   <Box
                     bg={msg.sender === "user" ? "primary.700" : "primary.200"}
@@ -139,18 +145,15 @@ function Chatbot() {
                   </Box>
                 </HStack>
               ))}
+              {loading && <Spinner />}
             </VStack>
           </ModalBody>
 
           {/* INPUT & ENVOI */}
           <Box p={4} borderTop="1px solid gray">
             <HStack>
-              <Input
-                placeholder="Écrivez un message..."
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-              />
-              <Button colorScheme="primary.500" onClick={sendMessage}>
+              <Input placeholder="Écrivez un message..." value={userInput} onChange={(e) => setUserInput(e.target.value)} />
+              <Button colorScheme="primary.500" onClick={handleSendMessage} isLoading={loading}>
                 Envoyer
               </Button>
             </HStack>

@@ -2,6 +2,7 @@ import { Box, Text, useColorModeValue, Link, HStack, IconButton, Center } from '
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import Magnet from '../../components/react-bits/Magnet'
 import { Link as RouterLink } from "react-router-dom";
+import { SiMalt } from "react-icons/si"; // Import de l'icône Malt
 
 function Footer() {
   // Utilisation du thème pour la gestion automatique des couleurs
@@ -33,6 +34,13 @@ function Footer() {
             <IconButton  fontSize="3xl" aria-label="GitHub" icon={<FaGithub />} size="lg" variant="ghost" _hover={{ color: iconHoverColor }} />
           </Link>
           </Magnet>
+
+          <Magnet padding={100} disabled={false} magnetStrength={10}>
+          <Link href="https://www.malt.fr/profile/guillaumenebie" isExternal>
+            <IconButton fontSize="3xl" aria-label="Malt" icon={<SiMalt />} size="lg" variant="ghost" _hover={{ color: iconHoverColor }} />
+        </Link>
+        </Magnet>
+
           <Magnet padding={100} disabled={false} magnetStrength={10}>
           <Link href="mailto:guillaumelale@gmail.com">
             <IconButton  fontSize="3xl" aria-label="Email" icon={<FaEnvelope />} size="lg" variant="ghost" _hover={{ color: iconHoverColor }} />
