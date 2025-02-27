@@ -11,6 +11,8 @@ jobs:
     env:
       VITE_CHAT_BACKEND_URL: ${{ secrets.VITE_CHAT_BACKEND_URL }}
       VITE_MAIL_BACKEND_URL: ${{ secrets.VITE_MAIL_BACKEND_URL }}
+      VITE_CHAT_BACKEND_URL_VARS: ${{ vars.VITE_CHAT_BACKEND_URL }}
+      VITE_MAIL_BACKEND_URL_VARS: ${{ vars.VITE_MAIL_BACKEND_URL }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -28,7 +30,11 @@ jobs:
       - name: Set environment variables
         run: |
           echo "VITE_CHAT_BACKEND_URL=$VITE_CHAT_BACKEND_URL" > frontend/.env
-          echo "VITE_MAIL_BACKEND_URL=$VITE_CHAT_BACKEND_URL" >> frontend/.env
+          echo "VITE_MAIL_BACKEND_URL=$VITE_MAIL_BACKEND_URL" >> frontend/.env
+          echo "VITE_CHAT_BACKEND_URL_VARS=$VITE_CHAT_BACKEND_URL_VARS" > frontend/.env
+          echo "VITE_MAIL_BACKEND_URL_VARS=$VITE_MAIL_BACKEND_URL_VARS" >> frontend/.env
+      - name: Debug .env content
+        run: cat frontend/.env
 
       - name: Build Project
         run: |
