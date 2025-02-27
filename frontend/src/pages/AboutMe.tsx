@@ -102,7 +102,9 @@ function AboutMe() {
         {/* CTA avec Animation */}
         <MotionBox whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
             <Text fontSize="lg" color={textColor}>
-            **Vous cherchez un expert en Backend Python & IA ?** Parlons-en !
+            **Vous n'aviez pas trouver votre expert en Backend Python & IA ?** 
+            <br />
+            Me voila! Parlons de vos besoins !
             </Text>
             <Button as={Link} to="/contact" colorScheme="primary" size="lg" mt={3}>
             Me Contacter
