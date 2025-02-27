@@ -25,8 +25,8 @@ jobs:
       
       - name: Set environment variables
         run: |
-          echo "VITE_CHAT_BACKEND_URL=test1234${{ vars.VITE_CHAT_BACKEND_URL }}" > frontend/.env
-          echo "VITE_MAIL_BACKEND_URL=test5678${{ vars.VITE_MAIL_BACKEND_URL }}" >> frontend/.env
+          echo "VITE_CHAT_BACKEND_URL=test1234${{ secrets.VITE_CHAT_BACKEND_URL }}" > frontend/.env
+          echo "VITE_MAIL_BACKEND_URL=test5678${{ secrets.VITE_MAIL_BACKEND_URL }}" >> frontend/.env
 
       - name: Build Project
         run: |
