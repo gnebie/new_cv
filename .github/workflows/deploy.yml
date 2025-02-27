@@ -8,7 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    env:
+      VITE_CHAT_BACKEND_URL: ${{ secrets.VITE_CHAT_BACKEND_URL }}
+      VITE_MAIL_BACKEND_URL: ${{ secrets.VITE_MAIL_BACKEND_URL }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -25,8 +27,8 @@ jobs:
       
       - name: Set environment variables
         run: |
-          echo "VITE_CHAT_BACKEND_URL=test1234${{ secrets.VITE_CHAT_BACKEND_URL }}" > frontend/.env
-          echo "VITE_MAIL_BACKEND_URL=test5678${{ secrets.VITE_MAIL_BACKEND_URL }}" >> frontend/.env
+          echo "VITE_CHAT_BACKEND_URL==$VITE_CHAT_BACKEND_URL" > frontend/.env
+          echo "VITE_MAIL_BACKEND_URL==$VITE_MAIL_BACKEND_URL" >> frontend/.env
 
       - name: Build Project
         run: |
