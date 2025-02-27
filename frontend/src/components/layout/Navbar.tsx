@@ -29,8 +29,8 @@ function Navbar() {
   // Utilisation des couleurs du thème
   const bgLogoColor = useColorModeValue("background.light", "background.dark");
 
-  const bgColor = useColorModeValue("transparent", "transparent"); // ✅ Permet de voir l'Aurora derrière
-  const bgMobileColor = useColorModeValue("background.light", "background.dark"); // ✅ Permet de voir l'Aurora derrière
+  const bgColor = useColorModeValue("transparent", "transparent");
+  const bgMobileColor = useColorModeValue("background.light", "background.dark");
   const textColor = useColorModeValue("text.dark.primary", "text.dark.primary");
   const hoverColor = useColorModeValue("secondary.500", "secondary.400");
   const auroraColors:  [string, string, string] = useColorModeValue(

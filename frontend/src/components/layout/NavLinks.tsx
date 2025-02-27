@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "À propos de moi", href: "/aboutme" },
 ];
 
-// Composant des liens du menu
+
 export function NavLinks({ isMobile = false }: { isMobile?: boolean }) {
   if (isMobile) {
     return (
