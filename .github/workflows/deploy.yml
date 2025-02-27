@@ -27,8 +27,8 @@ jobs:
       
       - name: Set environment variables
         run: |
-          echo "VITE_CHAT_BACKEND_URL==$VITE_CHAT_BACKEND_URL" > frontend/.env
-          echo "VITE_MAIL_BACKEND_URL==$VITE_MAIL_BACKEND_URL" >> frontend/.env
+          echo "VITE_CHAT_BACKEND_URL=$VITE_CHAT_BACKEND_URL" > frontend/.env
+          echo "VITE_MAIL_BACKEND_URL=$VITE_CHAT_BACKEND_URL" >> frontend/.env
 
       - name: Build Project
         run: |
