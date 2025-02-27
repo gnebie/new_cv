@@ -17,14 +17,14 @@ const ACHIEVEMENTS = [
       description: "Expérience réussie en Backend, DevOps, API, Machine Learning et Développement Fullstack.",
       icon: FaServer,
       image: "/web-1935737_1280.png",
-      details: "Le site sur lequel vous naviguez est entièrement développé par moi, démontrant ma maîtrise des architectures modernes et des technologies fullstack.",
+      details: "Le site sur lequel vous naviguez est le résultat de mes petits doights sur le clavier, un échatillon de ma maîtrise des architectures modernes et des technologies fullstack.",
     },
     {
       title: "🏆 Spécialiste des APIs robustes et performantes",
       description: "Expertise en APIs Python et C#, avec une approche rigoureuse et des standards de qualité élevés.",
       icon: FaTrophy,
       image: "/software-developer-6521720_1280.jpg",
-      details: "J'applique les meilleures pratiques : Design Patterns, Frameworks modernes (FastAPI, Flask, ASP.NET Core), tests unitaires, et sécurité avancée.",
+      details: "Je maitrise et suis capable d'intégrer les meilleures pratiques de developpement actuelles : Design Patterns, Frameworks modernes (FastAPI, Flask, ASP.NET Core), tests unitaires, et sécurité avancée.",
     },
     {
       title: "📈 Automatisation et Intelligence Artificielle",

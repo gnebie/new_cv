@@ -20,11 +20,17 @@ function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const toggleMenu = () => setShowMenu(!showMenu);
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   // Utilisation des couleurs du thème
   const bgLogoColor = useColorModeValue("background.light", "background.dark");
 
   const bgColor = useColorModeValue("transparent", "transparent"); // ✅ Permet de voir l'Aurora derrière
+  const bgMobileColor = useColorModeValue("background.light", "background.dark"); // ✅ Permet de voir l'Aurora derrière
   const textColor = useColorModeValue("text.dark.primary", "text.dark.primary");
   const hoverColor = useColorModeValue("secondary.500", "secondary.400");
   const auroraColors:  [string, string, string] = useColorModeValue(
@@ -75,7 +81,7 @@ function Navbar() {
           />
           <IconButton
             aria-label="Ouvrir le menu"
-            icon={showMenu ? <CloseIcon /> : <HamburgerIcon />}
+            icon={showMenu ? <CloseIcon /> : <HamburgerIcon onClick={scrollToTop}/>}
             size="lg"
             display={{ base: "flex", md: "none" }}
             onClick={toggleMenu}
@@ -88,7 +94,7 @@ function Navbar() {
       {showMenu && (
         <Flex
           direction="column"
-          bg={bgColor}
+          bg={bgMobileColor}
           position="absolute"
           top="4rem"
           left="0"

@@ -20,7 +20,7 @@ export function useContactForm() {
         setError(null);
 
         try {
-            await axios.post(`${config.backendUrl}/contact`, formData);
+            await axios.post(`${config.backendEmailUrl}`, formData);
             setIsSubmitted(true);
             setFormData({ name: "", email: "", message: "" });
 

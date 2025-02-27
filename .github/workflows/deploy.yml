@@ -32,5 +32,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: frontend/dist # Assure-toi que le build se fait bien dans "dist"
-
+          folder: frontend/dist
+          clean: true
+          single-commit: true
+          exclude: ".nojekyll"

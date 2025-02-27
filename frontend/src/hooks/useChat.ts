@@ -19,7 +19,7 @@ export function useChat() {
     setLoading(true);
 
     try {
-        const response = await axios.post(`${config.backendUrl}/send_message`, { message });
+        const response = await axios.post(`${config.backendChatUrl}`, { message });
       setChatLog(prev => [...prev, { sender: 'Bot', text: response.data.reply }]);
     } catch (error) {
       console.error("Erreur d'envoi du message :", error);

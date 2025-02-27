@@ -1,5 +1,6 @@
 const config = {
-    backendUrl: import.meta.env.VITE_BACKEND_URL || "http://localhost:5000",
-  };
+  backendChatUrl: import.meta.env.VITE_CHAT_BACKEND_URL || "http://localhost:5000/chat",
+  backendEmailUrl: import.meta.env.VITE_MAIL_BACKEND_URL || "http://localhost:5000/mail",
+};
   
-  export default config;
+export default config;

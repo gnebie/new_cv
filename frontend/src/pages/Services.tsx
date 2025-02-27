@@ -127,7 +127,7 @@ sequential={true}
         </Center>
         <Box height="300px">
         <FallingText
-        text={`Ne créez pas des services a base de code de mauvaise qualite qui se cassera au premier utilisateur qui testera votre service.`}
+        text={`Ne créez pas des services a base de code de mauvaise qualite qui se briseront au premier utilisateur testant votre service.`}
         // highlightWords={["services", "mauvaise", "qualite", "cassera", "utilisateur"]}
         // highlightClass="highlighted"
         trigger="hover"

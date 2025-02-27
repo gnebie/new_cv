@@ -1,5 +1,5 @@
 # Utiliser une image officielle Node.js optimisée pour la production
-FROM node:20-alpine
+FROM node:22-alpine
 
 # Créer et définir le répertoire de travail à l'intérieur du conteneur
 WORKDIR /app
