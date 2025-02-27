@@ -22,6 +22,11 @@ jobs:
         run: |
           cd frontend
           npm install
+      
+      - name: Set environment variables
+        run: |
+          echo "VITE_CHAT_BACKEND_URL=${{ vars.VITE_CHAT_BACKEND_URL }}" >> $GITHUB_ENV
+          echo "VITE_MAIL_BACKEND_URL=${{ vars.VITE_MAIL_BACKEND_URL }}" >> $GITHUB_ENV
 
       - name: Build Project
         run: |
