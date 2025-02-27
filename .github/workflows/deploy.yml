@@ -5,16 +5,17 @@ on:
     branches:
       - master
 
-env:
-  VITE_CHAT_BACKEND_URL: ${{ secrets.VITE_CHAT_BACKEND_URL }}
-  VITE_MAIL_BACKEND_URL: ${{ secrets.VITE_MAIL_BACKEND_URL }}
-  VITE_CHAT_BACKEND_URL_VARS: ${{ vars.VITE_CHAT_BACKEND_URL }}
-  VITE_MAIL_BACKEND_URL_VARS: ${{ vars.VITE_MAIL_BACKEND_URL }}
+
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    environment: github-pages
+    env:
+      VITE_CHAT_BACKEND_URL: ${{ secrets.VITE_CHAT_BACKEND_URL }}
+      VITE_MAIL_BACKEND_URL: ${{ secrets.VITE_MAIL_BACKEND_URL }}
+      VITE_CHAT_BACKEND_URL_VARS: ${{ vars.VITE_CHAT_BACKEND_URL }}
+      VITE_MAIL_BACKEND_URL_VARS: ${{ vars.VITE_MAIL_BACKEND_URL }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
