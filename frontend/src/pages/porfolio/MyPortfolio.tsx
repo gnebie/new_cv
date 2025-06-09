@@ -1,7 +1,18 @@
-import { Box, Heading, Text, VStack, HStack, Image, Button, useColorModeValue } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import {
+  Box,
+  Heading,
+  Text,
+  SimpleGrid,
+  Wrap,
+  WrapItem,
+  Image,
+  Button,
+  VStack,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 
-const MotionBox = motion(Box);
+const MotionBox = motion(Box)
 
 // Liste des projets
 const PROJECTS = [
@@ -10,114 +21,190 @@ const PROJECTS = [
     description: "Web-app interactive permettant de générer des histoires personnalisées en temps réel avec IA.",
     techs: ["FastAPI", "React", "Stable Diffusion", "PostgreSQL", "Kubernetes"],
     image: "/fairytale_stories_site.png", 
-    github: "https://github.com/gnebie/fairytale-stories",
-    site: "https://fairytale-stories.nebie.fr/",
+    github: "https://github.com/gnebie/public_fairytale_stories",
+    // site: "https://fairytale-stories.nebie.fr/",
+    readme: "https://github.com/gnebie/public_fairytale_stories/blob/master/FREELANCE.md",
+    video: "https://youtu.be/seC7YNu_CIE",
+    status: "Projet mis de coté",
+    featured: true,
   },
   {
-    name: "Pretty souls Instagram",
-    description: "Echantillon d'image generees pr moi meme utilisant differents themes .",
-    techs: ["Stable Diffusion", ],
-    image: "/instagram_prettysouls.png", 
-    // github: "https://github.com/gnebie/fairytale-stories",
-    site: "https://www.instagram.com/pretty.soul.2042/",
-  },
-  {
-    name: "N8n Conversational agent",
-    description: "Creation d'agent conversationels locaux et personnalisables pour les documents internes.",
-    techs: ["n8n","IA Agent", "IA Integration", "Chatgpt", "LowCode" ],
-    image: "/n8n_agent.png", 
-    // github: "https://github.com/gnebie/fairytale-stories",
-    // site: "https://www.instagram.com/pretty.soul.2042/",
-  },
-  {
-    name: "Python CLI",
-    description: "Python CLi to easly connect to an api.",
-    techs: ["bash", "python", "CLI", "docker",  ],
-    image: "/cli_auto.png", 
-    github: "https://github.com/gnebie/stable_diffusion_1111_sdk",
-    // site: "https://www.instagram.com/pretty.soul.2042/",
-  },
-  {
-    name: "Web inseptions",
-    description: "This website.",
-    techs: ["React", "Typescript", "docker", "docker-compose",  ],
-    image: "/this_website.png", 
-    github: "https://github.com/gnebie/new_cv",
-    // site: "https://www.instagram.com/pretty.soul.2042/",
-  },
-  //
-//   {
-//     name: "SDK de calcul distribué",
-//     description: "Développement d'un SDK open-source pour gérer du calcul distribué sur CPU/GPU.",
-//     techs: ["Python", "FastAPI", "C#", "Docker", "Kubernetes"],
-//     image: "/images/qarnot_sdk.png",
-//     github: "https://github.com/gnebie/qarnot-sdk",
-//   },
-//   {
-//     name: "API de gestion d'utilisateurs",
-//     description: "API REST robuste avec gestion avancée des utilisateurs et authentification JWT.",
-//     techs: ["Django", "PostgreSQL", "Redis", "CI/CD"],
-//     image: "/images/user_management.png",
-//     github: "https://github.com/gnebie/user-management-api",
-//   },
+  name: "Inspiring Daily IA Song Generator",
+  description: "Application low-code qui récupère les actus via Google News, résume avec ChatGPT, et propose des chansons inspirantes quotidiens pour les réseaux sociaux.",
+  techs: ["n8n", "Google News API", "ChatGPT", "Prompt Engineering", "NoCode"],
+  image: "/portfolio/actu_ai_song.png",
+//   site: "https://daily-inspiration.nebie.fr/", // si hébergé
+  video: "https://youtu.be/daily_inspiration_demo", // optionnel
+  github: "https://github.com/gnebie/daily-inspiration-bot", // si tu veux le publier
+  readme: "https://github.com/gnebie/daily-inspiration-bot/blob/main/README.md",
+  type: "Agent IA / Automatisation",
+  status: "Prototype fonctionnel",
+  featured: false,
+},
+{
+  name: "AI Music content creator",
+  description: "Plateforme full-stack pour générer automatiquement pour des chansons, tout le contenu a destination des reseaux sociaux, illustrées avec IA (texte, images, vidéo, descriptions).",
+  techs: ["React", "OpenAI", "FastAPI", "ffmpeg", "Prompt Engineering", "Chakra UI", "TypeScript", "MoviePy", "Celery", "Docker", "Kubernetes"],
+  image: "/portfolio/music_content_manager.png",
+  github: "https://github.com/gnebie/song_manager", // si dispo
+//   site: "https://ai-songwriter.nebie.fr/", // ou lien à définir
+  video: "https://youtu.be/TmAMmhg4jGs", // si tu veux faire une démo YouTube ou Loom
+//   readme: "https://github.com/gnebie/ai-songwriter/blob/main/README.md",
+  type: "Création IA / Musique",
+  status: "Produit utilisé en interne",
+  featured: true,
+},
 ];
 
-function MyPortfolio() {
-  const bgColor = useColorModeValue("gray.100", "gray.900");
-  const cardColor = useColorModeValue("white", "gray.800");
-  const textColor = useColorModeValue("gray.800", "white");
-  const accentColor = useColorModeValue("blue.500", "cyan.400");
-  const particuleColor1 = useColorModeValue("primary.100", "#FFFFFF");
-  const particuleColor2 = useColorModeValue("secondary.100", "#FFFFFF");
 
+
+function Section({
+  title,
+  projects,
+  featured = false,
+}: {
+  title: string
+  projects: typeof PROJECTS
+  featured?: boolean
+}) {
+  const gridCols = featured
+    ? { base: 1, md: 2 }
+    : { base: 1, md: 2, lg: 3 }
   return (
-        <HStack spacing={6} wrap="wrap" justify="center">
-          {PROJECTS.map((project, index) => (
-            <MotionBox
-              key={index}
-              bg={cardColor}
-              p={6}
-              zIndex={2} position="sticky"
-
-              borderRadius="lg"
-              boxShadow="lg"
-              width={{ base: "100%", md: "45%", lg: "30%" }}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image src={project.image} alt={project.name} borderRadius="md" mb={4} />
-              <Heading size="md" color={accentColor} mb={2}>
-                {project.name}
-              </Heading>
-              <Text fontSize="md" color={textColor} mb={3}>
-                {project.description}
-              </Text>
-
-              {/* Technologies utilisées */}
-              <HStack spacing={2} wrap="wrap" mb={4}>
-                {project.techs.map((tech) => (
-                  <Button key={tech} size="sm" variant="outline" colorScheme="blue">
-                    {tech}
-                  </Button>
-                ))}
-              </HStack>
-
-              {/* Liens GitHub et Démo */}
-              <HStack spacing={4}>
-              {project.github && (
-                <Button as="a" href={project.github} target="_blank" colorScheme="gray">
-                  GitHub
-                </Button>)}
-                {project.site && (
-                  <Button as="a" href={project.site} target="_blank" colorScheme="blue">
-                    Voir le site
-                  </Button>
-                )}
-              </HStack>
-            </MotionBox>
-          ))}
-        </HStack>
-    );
+    <Box w="100%">
+      <Heading size="lg" mb={6} textAlign="center">
+        {title}
+      </Heading>
+      <SimpleGrid columns={gridCols} spacing={6}>
+        {projects.map((project, idx) => (
+          <ProjectCard key={idx} project={project} featured={featured} />
+        ))}
+      </SimpleGrid>
+    </Box>
+  )
 }
 
-export default MyPortfolio;
+function ProjectCard({
+  project,
+  featured,
+}: {
+  project: typeof PROJECTS[0]
+  featured?: boolean
+}) {
+  const cardBg = featured
+    ? useColorModeValue('blue.50', 'blue.900')
+    : useColorModeValue('white', 'gray.800')
+  const accentColor = useColorModeValue('blue.500', 'cyan.400')
+  const shadow = featured ? '2xl' : 'lg'
+  return (
+    <MotionBox
+      bg={cardBg}
+      p={featured ? 8 : 6}
+      borderRadius="xl"
+      boxShadow={shadow}
+      whileHover={{ scale: featured ? 1.01 : 1.02 }}
+      transition={{ duration: 0.3 }}
+    >
+      <VStack align="start" spacing={4}>
+        <Heading size="md" color={featured ? 'blue.600' : accentColor}>
+          {project.name}
+        </Heading>
+
+        {project.image && (
+          <Image
+            src={project.image}
+            alt={project.name}
+            borderRadius="md"
+            // maxH="200px"
+            objectFit="cover"
+          />
+        )}
+
+        <Text fontSize="md">{project.description}</Text>
+
+        <Wrap spacing={2}>
+          {project.techs.map((tech) => (
+            <WrapItem key={tech}>
+              <Button size="sm" variant={featured ? 'solid' : 'outline'} colorScheme="blue">
+                {tech}
+              </Button>
+            </WrapItem>
+          ))}
+        </Wrap>
+
+        <Wrap mt={2} spacing={3}>
+          {project.github && (
+            <WrapItem>
+              <Button
+                as="a"
+                href={project.github}
+                target="_blank"
+                colorScheme="gray"
+                size="sm"
+              >
+                GitHub
+              </Button>
+            </WrapItem>
+          )}
+          {project.site && (
+            <WrapItem>
+              <Button
+                as="a"
+                href={project.site}
+                target="_blank"
+                colorScheme="blue"
+                size="sm"
+              >
+                Voir le site
+              </Button>
+            </WrapItem>
+          )}
+          {project.readme && (
+            <WrapItem>
+              <Button
+                as="a"
+                href={project.readme}
+                target="_blank"
+                colorScheme="green"
+                size="sm"
+              >
+                README
+              </Button>
+            </WrapItem>
+          )}
+          {project.video && (
+            <WrapItem>
+              <Button
+                as="a"
+                href={project.video}
+                target="_blank"
+                colorScheme="purple"
+                size="sm"
+              >
+                Démo vidéo
+              </Button>
+            </WrapItem>
+          )}
+        </Wrap>
+
+        <Text fontSize="sm" color="gray.500">
+          {project.type} — <Text as="span" fontStyle="italic">{project.status}</Text>
+        </Text>
+      </VStack>
+    </MotionBox>
+  )
+}
+
+export default function MyPortfolio() {
+  const featuredProjects = PROJECTS.filter((p) => p.featured)
+  const otherProjects = PROJECTS.filter((p) => !p.featured)
+
+  return (
+    <VStack spacing={12} align="stretch">
+      {featuredProjects.length > 0 && (
+        <Section title="🚀 Projets phare" projects={featuredProjects} featured />
+      )}
+      <Section title="Autres projets" projects={otherProjects} />
+    </VStack>
+  )
+}
