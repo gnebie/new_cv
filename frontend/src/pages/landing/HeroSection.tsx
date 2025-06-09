@@ -44,26 +44,30 @@ function HeroSection() {
 
       <VStack spacing={8} zIndex="1" maxWidth="800px">
         <Heading color={textColor} size="2xl" fontWeight="bold">
-          🚀 Transformez votre <Text as="span" color="primary.500">Backend & IA</Text> en un atout stratégique
+            Un MVP IA à livrer ? Un backend mature à fiabiliser ? 
         </Heading>
 
         <Box bg={bgColor} p={6} borderRadius="md" backdropFilter="blur(10px)">
-        <Text fontSize="xl" color={textColor}>
-            Vous avez besoin d’une API ultra-performante ou d’une intégration IA sur mesure ?  
-            </Text>
+          <Text fontSize="xl" color={textColor}>
+          NEBIE Guillaume, freelance spécialisé en <strong>Backend Python</strong> et <strong>Intégration IA</strong>.
+          </Text><br/>
+          <Text fontSize="xl" color={textColor}>
+            Je construis des systèmes solides, <Text as="span" color="primary.500">augmentés par l’IA,</Text> pensés pour durer.
+          </Text><br/>
 
           <Text fontSize="xl" color={textColor}>
-            Bienvenu sur mon site, NEBIE Guillaume, Architecte de rêves
-            </Text>
-            <Text fontSize="xl" color={textColor}>
-            Je vous aide à automatiser vos processus et scaler votre infrastructure, sans compromis sur la qualité.
+          Du code propre pour des produits mantenables et puissants. 
           </Text>
+          <Text fontSize="xl" color={textColor}>
+            Une expertise IA pour l'integrer là où elle a un vrai impact.
+          </Text>
+          <br/>
+          <Text fontSize="xl" color={textColor}>
+            Vous avez besoin d’une API ultra-performante ou d'un outils IA sur mesure ?  
+            </Text>
+
         </Box>
 
-        {/* Animation Lottie (au lieu d’un portrait statique) */}
-        {/* <Box width="300px">
-          <Lottie animationData={heroAnimation} loop={true} />
-        </Box> */}
       <Link  to="/contact">
 
         <StarBorder>

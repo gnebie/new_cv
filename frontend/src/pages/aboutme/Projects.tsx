@@ -44,7 +44,7 @@ function Projects() {
       <VStack spacing={12} align="stretch">
         {/* Titre */}
         <Heading color={textColor} size="xl" textAlign="center">
-          🔥 Mes Projets
+          Mes Projets
         </Heading>
 
         {/* Liste des projets */}

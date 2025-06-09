@@ -30,7 +30,7 @@ function AboutMe() {
           <AccordionItem>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size="xl" color={textColor}>🚀 À propos de moi</Heading>
+                <Heading size="xl" color={textColor}>À propos de moi</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -50,7 +50,7 @@ function AboutMe() {
           <AccordionItem>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size="xl" color={textColor}>📈 Compétences</Heading>
+                <Heading size="xl" color={textColor}>Compétences</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -63,7 +63,7 @@ function AboutMe() {
           <AccordionItem>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size="xl" color={textColor}>💼 Expériences</Heading>
+                <Heading size="xl" color={textColor}>Expériences</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -89,7 +89,7 @@ function AboutMe() {
           <AccordionItem>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size="xl" color={textColor}>😎 Moi (derrière le développeur, un être humain)</Heading>
+                <Heading size="xl" color={textColor}>Moi (derrière le développeur, un être humain)</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -102,7 +102,7 @@ function AboutMe() {
         {/* CTA avec Animation */}
         <MotionBox whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
             <Text fontSize="lg" color={textColor}>
-            **Vous n'aviez pas trouver votre expert en Backend Python & IA ?** 
+            Vous n'aviez pas trouver votre expert en Backend Python & IA ? 
             <br />
             Me voila! Parlons de vos besoins !
             </Text>

@@ -61,7 +61,7 @@ function Experience() {
       <VStack spacing={12} align="stretch">
         {/* Titre */}
         <Heading color={textColor} size="xl" textAlign="center">
-          💼 Mon Expérience
+          Mon Expérience
         </Heading>
 
         {/* Timeline des expériences */}

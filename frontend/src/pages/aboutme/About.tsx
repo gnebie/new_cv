@@ -39,18 +39,18 @@ function About() {
           width="100%"
         >
           <Heading color={textColor} size="xl" textAlign="center">
-            🚀 Qui suis-je ?
+            Qui suis-je ?
           </Heading>
           <Text fontSize="lg" color={textColor} mt={3} textAlign="center">
-            Je suis <strong>Guillaume Nebie</strong>, **freelance expert en Backend Python & Intelligence Artificielle**.  
-            J’aide les entreprises à **développer des API performantes**, à **intégrer des modèles IA avancés**  
-            et à **optimiser leurs infrastructures cloud**.
+            Je suis <strong>Guillaume Nebie</strong>, freelance expert en Backend Python & Intelligence Artificielle.  
+            J’aide les entreprises à développer des API performantes, à intégrer des modèles IA avancés  
+            et à optimiser leurs infrastructures cloud.
           </Text>
         </MotionBox>
 
         {/* 📜 Mon parcours (Storytelling) */}
         <Heading color={textColor} size="lg">
-          📜 Mon parcours atypique
+          Mon parcours atypique 📜 
         </Heading>
         <MotionBox
           bg={cardColor}
@@ -60,18 +60,18 @@ function About() {
           width="100%"
         >
           <Text fontSize="md" color={textColor}>
-            Tout a commencé loin du code, dans une **cuisine de pâtisserie**. De la rigueur des recettes à la précision  
-            des algorithmes, mon parcours m’a appris une chose essentielle : **peu importe le domaine, c’est la qualité  
-            qui fait la différence**.  
-            Aujourd’hui, j’applique cette même exigence en développement logiciel, où **chaque ligne de code doit être  
-            optimisée et maîtrisée**. Après un parcours à l’École **42 (6ᵉ de ma promo)** et 7 ans d’expérience en  
-            **finance, machine learning, backend & DevOps**, je suis prêt à relever vos défis techniques les plus ambitieux.
+            Tout a commencé loin du code, dans une cuisine de pâtisserie. De la rigueur des recettes à la précision  
+            des algorithmes, mon parcours m’a appris une chose essentielle : peu importe le domaine, c’est la qualité  
+            qui fait la différence.  
+            Aujourd’hui, j’applique cette même exigence en développement logiciel, où chaque ligne de code doit être  
+            optimisée et maîtrisée. Après un parcours à l’École 42 (6ᵉ de ma promo) et 7 ans d’expérience en  
+            finance, machine learning, backend & DevOps, je suis prêt à relever vos défis techniques les plus ambitieux.
           </Text>
         </MotionBox>
 
         {/* 🔥 Chiffres clés */}
         <Heading color={textColor} size="lg">
-          🔥 Quelques chiffres sur moi
+          Quelques chiffres sur moi
         </Heading>
         <HStack spacing={6} wrap="wrap">
           {[
@@ -99,7 +99,7 @@ function About() {
 
         {/* 💡 Pourquoi travailler avec moi ? */}
         <Heading color={textColor} size="lg">
-          💡 Pourquoi me faire confiance ?
+          Pourquoi me faire confiance ?
         </Heading>
         <VStack align="start" spacing={5} width="100%">
           <MotionBox
@@ -113,10 +113,10 @@ function About() {
           >
             <RotatingText
               texts={[
-                "✅ **Spécialiste Backend & API** - Conception de **microservices** robustes avec **FastAPI, Flask, Django**.",
-                "🤖 **Expert en IA** - Intégration de **modèles OpenAI, TensorFlow, NLP et Computer Vision**.",
-                "⚡ **Performance & Scalabilité** - Optimisation et mise en production avec **Docker, Kubernetes, CI/CD**.",
-                "🛠 **Accompagnement & Conseil** - Audit, formation et stratégie d’optimisation technique.",
+                "✅ Spécialiste Backend & API - Conception de microservices robustes avec FastAPI, Flask, Django.",
+                "🤖 Expert en IA - Intégration de modèles OpenAI, TensorFlow, NLP et Computer Vision.",
+                "⚡ Performance & Scalabilité - Optimisation et mise en production avec Docker, Kubernetes, CI/CD.",
+                "🛠 Accompagnement & Conseil - Audit, formation et stratégie d’optimisation technique.",
               ]}
               rotationInterval={5000}
             />
@@ -126,7 +126,7 @@ function About() {
         {/* 🔧 Technologies maîtrisées */}
         <Divider />
         <Heading color={textColor} size="lg">
-          🔧 Technologies Maîtrisées
+          Technologies Maîtrisées
         </Heading>
         <HStack spacing={3} wrap="wrap">
           {[
@@ -153,7 +153,7 @@ function About() {
           textAlign="center"
         >
           <Text fontSize="lg" color={textColor}>
-            🚀 **Vous avez un projet ambitieux ?** Discutons-en et voyons comment je peux vous aider !
+            Vous avez un projet ambitieux 🚀 ? Discutons-en et voyons comment je peux vous aider !
           </Text>
           <Button as={Link} to="/contact" colorScheme="primary" size="lg" mt={3}>
             Me Contacter

@@ -6,24 +6,37 @@ const MotionBox = motion(Box);
 
 // Définition des cartes
 const FEATURES = [
-  {
+    {
     title: "🔧 Backend & API sur-mesure",
-    description: "Développement de microservices performants, optimisés pour la scalabilité. Optimisation d'API rapides et sécurisées, capables de gérer des milliers d'utilisateurs.",
+    description_produit: "Des APIs fiables, scalables, prêtes à encaisser la montée en charge. Je construis des services backend clairs, modulaires, et documentés pour vous permettre d'avancer sereinement.",
+    description_technique: "Backend Python (FastAPI), tests, CI/CD, auth, docs Swagger, SOLID. Code lisible, modulaire, testé, pensé pour être maintenu à plusieurs.",
     icon: FaCode,
     image: "/code-944499_1280.jpg",
   },
   {
-    title: "🚀 Integration d'outils IA ",
-    description: "Intégration d'outils IA Que ce soit texte, images ou son",
+    title: "🚀 Intégration d'outils IA",
+    description_produit: "Vous voulez ajouter de l’intelligence dans vos outils ? Tester rapidement un MVP ? Je vous aide à intégrer des briques IA utiles (génération de texte, agents, automatisation) pour rendre votre produit plus efficace et plus différenciant.",
+    description_technique: "LLMs, modèles préentraînés : équipe CrewAI, agents LangChain, RAG, embeddings, orchestrés dans une architecture maîtrisée.",
     icon: FaRocket,
     image: "/blockchain-3537389_1280.jpg",
   },
   {
-    title: "🤝 Accompagnement & Stratégie",
-    description: "Conseils techniques, architecture et formations IA sur-mesure pour votre projet ou votre équipe.",
-    icon: FaUserTie,
-    image: "/code-8779047_1280.jpg",
-  },
+  title: "🤝 Accompagnement IA & Vision Produit",
+  description_produit: 
+    "Besoin d'aide pour prendre les bonnes décisions IA? \
+    Je peux vous aider a évaluer les usages pertinents, \
+    structurer une roadmap IA réaliste, et accompagner la montée en compétence des equipes.",
+    
+  description_technique: 
+      "J’dentifie les cas d’usage utiles, \
+      conseil sur l’intégration (outils, modèle, stack). \
+      J’accompagne aussi vos équipes dans la montée en compétence, via des formations internes \
+      pour qu’elles puissent rester autonomes et prendre des décisions éclairées.",
+  
+    
+  icon: FaUserTie,
+  image: "/code-8779047_1280.jpg",
+}
 ];
 
 function WhyMe() {
@@ -81,7 +94,10 @@ function WhyMe() {
                 {feature.title}
               </Heading>
               <Text fontSize="md" textAlign="center" color={textColor}>
-                {feature.description}
+                {feature.description_produit}
+              </Text>
+              <Text fontSize="md" textAlign="center" color={textColor}>
+                {feature.description_technique}
               </Text>
             </VStack>
 

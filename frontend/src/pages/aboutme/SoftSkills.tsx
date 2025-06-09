@@ -21,10 +21,10 @@ const LANGUAGES = [
 
 // 🎭 Loisirs et Centres d'intérêt
 const HOBBIES = [
-  { title: "🎮 Jeu de Go", description: "Classé **3 kyu**, un jeu stratégique qui stimule la réflexion et la patience.", icon: FaGamepad },
-  { title: "🎵 Musique & Théâtre", description: "Passionné par les **arts vivants**, j’ai fait du théâtre et j’adore les musiques du monde.", icon: FaMusic },
-  { title: "🍳 Cuisine", description: "J’adore **expérimenter** en cuisine, mélanger les influences et découvrir de nouvelles saveurs.", icon: FaUtensils },
-  { title: "✈️ Voyages", description: "Chaque voyage est une aventure ! **Découverte culturelle et nouvelles expériences**.", icon: FaPlane },
+  { title: "🎮 Jeu de Go", description: "Classé 3 kyu, un jeu stratégique qui stimule la réflexion et la patience.", icon: FaGamepad },
+  { title: "🎵 Musique & Théâtre", description: "Passionné par les arts vivants, j’ai fait du théâtre et j’adore les musiques du monde.", icon: FaMusic },
+  { title: "🍳 Cuisine", description: "J’adore expérimenter en cuisine, mélanger les influences et découvrir de nouvelles saveurs.", icon: FaUtensils },
+  { title: "✈️ Voyages", description: "Chaque voyage est une aventure ! Découverte culturelle et nouvelles expériences.", icon: FaPlane },
 ];
 
 function SoftSkills() {
@@ -37,7 +37,7 @@ function SoftSkills() {
     <Box py={20} px={8}>
       {/* 🏆 Soft Skills */}
       <Heading color={textColor} size="xl" textAlign="center" mb={12}>
-        🎭 Soft Skills : Mon ADN Professionnel
+        Soft Skills : Mon ADN Professionnel
       </Heading>
 
       <HStack spacing={6} justify="center" wrap="wrap">

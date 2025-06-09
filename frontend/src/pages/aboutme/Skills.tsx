@@ -48,7 +48,7 @@ function Skills() {
       <VStack spacing={12} align="stretch">
         {/* Titre */}
         <Heading color={textColor} size="xl" textAlign="center">
-          🚀 Mes Compétences
+          Mes Compétences
         </Heading>
 
         {/* Affichage des compétences par catégorie */}
@@ -78,7 +78,7 @@ function Skills() {
         {/* Section compétences avancées avec progression */}
         <Divider />
         <Heading color={textColor} size="lg">
-          📈 Compétences Avancées
+          Compétences Avancées
         </Heading>
         <VStack spacing={4} align="start">
           {ADVANCED_SKILLS.map((skill) => (

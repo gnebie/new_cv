@@ -2,6 +2,7 @@ import { Box, Image } from "@chakra-ui/react";
 import { Suspense, lazy } from 'react';
 import CaseStudies from "./landing/CaseStudies";
 import { Helmet } from "react-helmet";
+import Missions from "./landing/Missions";
 
 const HeroSection = lazy(() => import('./landing/HeroSection'));
 const ChatSection = lazy(() => import('../components/chat/ChatSection'));
@@ -10,6 +11,7 @@ const DetailedSection = lazy(() => import('../components/portfolio/DetailedSecti
 const Experience = lazy(() => import('./landing/Experience'));
 const WhyMe = lazy(() => import("./landing/WhyMe"));
 const CTA = lazy(() => import("./landing/CTA"));
+const CTA2 = lazy(() => import("./landing/CTA2"));
 
 
 function Home() {
@@ -49,15 +51,17 @@ function Home() {
         </Box>        <Box height="80px" />
         <WhyMe />
         <Box height="80px" />
-        <Experience />
+        <Missions />
         <Box height="80px" />
         <CTA />
+        <Box height="80px" />
+        <Experience />
         <Box height="80px" />
         <ChatSection />
         <Box height="80px" />
         <CaseStudies />
         <Box height="80px" />
-        <CTA />
+        <CTA2 />
         <Box height="80px" />
         <DetailedSection />
       </Suspense>

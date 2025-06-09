@@ -6,39 +6,41 @@ const MotionBox = motion(Box);
 
 const ACHIEVEMENTS = [
     {
-      title: "🎓 Un parcours d'excellence à 42",
+      title: "🎓 Top performer à 42",
       description: "6ᵉ de ma promotion à l'école 42, avec un parcours intense du niveau 0 au niveau 20 en seulement 2 ans.",
       icon: FaBrain,
       image: "/42.png",
-      details: "J’ai également remporté le championnat 2017 du seul projet algorithmique avancé de l’école (Corewar Championship), démontrant mes compétences en optimisation et en résolution de problèmes complexes.",
+      details: "J’ai remporté le Corewar Championship 2017 (seul projet algorithmique concurenciel avancé de l’école). : low-level assembleur, optimisations extrêmes",
     },
     {
       title: "🚀 Une expertise complète & transversale",
-      description: "Expérience réussie en Backend, DevOps, API, Machine Learning et Développement Fullstack.",
+      description: "Développement complet de projets backend/IA, de l’API au déploiement en production. Intégration d’IA générative dans des outils métiers.",
       icon: FaServer,
       image: "/web-1935737_1280.png",
-      details: "Le site sur lequel vous naviguez est le résultat de mes petits doights sur le clavier, un échatillon de ma maîtrise des architectures modernes et des technologies fullstack.",
+      details: "Ce site est fullstack, fait maison. Il reflète ma maîtrise de bout en bout.",
     },
     {
-      title: "🏆 Spécialiste des APIs robustes et performantes",
-      description: "Expertise en APIs Python et C#, avec une approche rigoureuse et des standards de qualité élevés.",
-      icon: FaTrophy,
+      title: "🔐 APIs robustes et maintenables",
+          title: "🔧 Spécialisation API & backend",
+          description: "Conception de services robustes, documentés, testés. Expertise Python, FastAPI, C#, CI/CD, architecture modulaire.",
+          details: "J’aime quand le code est clair, testable, maintenable. Je mets en place des backends qui peuvent être repris par d’autres sans douleur. Et je documente tout.",
+          icon: FaTrophy,
       image: "/software-developer-6521720_1280.jpg",
-      details: "Je maitrise et suis capable d'intégrer les meilleures pratiques de developpement actuelles : Design Patterns, Frameworks modernes (FastAPI, Flask, ASP.NET Core), tests unitaires, et sécurité avancée.",
     },
     {
-      title: "📈 Automatisation et Intelligence Artificielle",
-      description: "Développement d'**outils IA** pour optimiser les workflows et automatiser des tâches complexes.",      
+
+    title: "🤖 Projets concrets en IA",
+    description: "Contribution à des projets IA réels : assistants vocaux, génération de texte, agents sur mesure. Utilisation de LangChain, CrewAI, embeddings, et orchestration sur API.",
       icon: FaRobot,
       image: "/d43e8792_altxl_v50_20250221_215449_048419_DPM++ 2M_3.png",
-      details: "J’ai contribué à l'optimisation du modèle de reconnaissance vocale de Samsung Bixby, et je développe des outils de génération IA comme FairyTale Stories."    
+      details: "Samsung Bixby (ASR), agents LangChain, générateurs narratifs… des projets où l’IA a un vrai impact métier."    
     },
     {
-      title: "🔍 Un code propre, sécurisé et scalable",
-      description: "Maîtrise des principes SOLID, Clean Code, et CI/CD, garantissant des applications maintenables et évolutives.",
+    title: "🔒 Rigueur logicielle & sécurité",
+    description: "Respect des bonnes pratiques de développement : SOLID, Clean Code, CI/CD, architecture modulaire, sécurité embarquée.",
+    details: "Je n’écris pas du code juste pour moi. Je l’écris pour l’équipe, pour ceux qui vont passer derrière, pour que le système tienne la route à long terme.",
       icon: FaShieldAlt,
       image: "/security-1163108_1280.jpg",
-      details: "J’implémente des tests automatisés, du chiffrement de données, et une architecture modulaire, assurant des performances optimales et une sécurité renforcée.",
     },
   ];
 
