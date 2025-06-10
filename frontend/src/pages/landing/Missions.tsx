@@ -1,6 +1,6 @@
 import { Box, Heading, Text, VStack, HStack, Icon, useColorModeValue, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaCogs, FaBrain, FaProjectDiagram, FaCode } from 'react-icons/fa';
+import { FaCogs, FaProjectDiagram, FaCode } from 'react-icons/fa';
 
 const MotionBox = motion(Box);
 

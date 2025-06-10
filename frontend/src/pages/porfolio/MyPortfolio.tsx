@@ -3,19 +3,32 @@ import {
   Heading,
   Text,
   SimpleGrid,
-  Wrap,
-  WrapItem,
   Image,
   Button,
   VStack,
   useColorModeValue,
+  HStack,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 const MotionBox = motion(Box)
 
+interface Project {
+  name: string
+  description: string
+  techs: string[]
+  image: string
+  github?: string
+  site?: string
+  readme?: string
+  video?: string
+  type?: string
+  status?: string
+  featured?: boolean
+}
+
 // Liste des projets
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     name: "FairyTale Stories",
     description: "Web-app interactive permettant de générer des histoires personnalisées en temps réel avec IA.",
@@ -84,11 +97,27 @@ function Section({
   )
 }
 
-function ProjectCard({
+// Mappage couleurs pour les technologies (optionnel)
+const techColorMap: Record<string, string> = {
+  React: 'cyan',
+  FastAPI: 'teal',
+  'Stable Diffusion': 'purple',
+  PostgreSQL: 'blue',
+  Kubernetes: 'orange',
+  n8n: 'green',
+  OpenAI: 'pink',
+  ffmpeg: 'yellow',
+  MoviePy: 'red',
+  Celery: 'purple',
+}
+
+const getTechColor = (tech: string) => techColorMap[tech] ?? 'gray'
+
+export function ProjectCard({
   project,
   featured,
 }: {
-  project: typeof PROJECTS[0]
+  project: Project
   featured?: boolean
 }) {
   const cardBg = featured
@@ -96,8 +125,11 @@ function ProjectCard({
     : useColorModeValue('white', 'gray.800')
   const accentColor = useColorModeValue('blue.500', 'cyan.400')
   const shadow = featured ? '2xl' : 'lg'
+
   return (
     <MotionBox
+      position="relative"
+      zIndex={1}
       bg={cardBg}
       p={featured ? 8 : 6}
       borderRadius="xl"
@@ -115,80 +147,84 @@ function ProjectCard({
             src={project.image}
             alt={project.name}
             borderRadius="md"
-            // maxH="200px"
             objectFit="cover"
+            w="100%"
           />
         )}
 
         <Text fontSize="md">{project.description}</Text>
 
-        <Wrap spacing={2}>
+        {/* Tech badges */}
+        <HStack spacing={2} wrap="wrap">
           {project.techs.map((tech) => (
-            <WrapItem key={tech}>
-              <Button size="sm" variant={featured ? 'solid' : 'outline'} colorScheme="blue">
-                {tech}
-              </Button>
-            </WrapItem>
+            <Button
+              key={tech}
+              size="sm"
+              variant={featured ? 'solid' : 'outline'}
+              colorScheme={getTechColor(tech)}
+            >
+              {tech}
+            </Button>
           ))}
-        </Wrap>
+        </HStack>
 
-        <Wrap mt={2} spacing={3}>
+        {/* Liens + zIndex pour rester clicable */}
+        <HStack spacing={3} wrap="wrap" zIndex={2}>
           {project.github && (
-            <WrapItem>
-              <Button
-                as="a"
-                href={project.github}
-                target="_blank"
-                colorScheme="gray"
-                size="sm"
-              >
-                GitHub
-              </Button>
-            </WrapItem>
+            <Button
+              as="a"
+              href={project.github}
+              target="_blank"
+              colorScheme="gray"
+              size="sm"
+              zIndex={3}
+            >
+              GitHub
+            </Button>
           )}
           {project.site && (
-            <WrapItem>
-              <Button
-                as="a"
-                href={project.site}
-                target="_blank"
-                colorScheme="blue"
-                size="sm"
-              >
-                Voir le site
-              </Button>
-            </WrapItem>
+            <Button
+              as="a"
+              href={project.site}
+              target="_blank"
+              colorScheme="blue"
+              size="sm"
+              zIndex={3}
+            >
+              Voir le site
+            </Button>
           )}
           {project.readme && (
-            <WrapItem>
-              <Button
-                as="a"
-                href={project.readme}
-                target="_blank"
-                colorScheme="green"
-                size="sm"
-              >
-                README
-              </Button>
-            </WrapItem>
+            <Button
+              as="a"
+              href={project.readme}
+              target="_blank"
+              colorScheme="green"
+              size="sm"
+              zIndex={3}
+            >
+              README
+            </Button>
           )}
           {project.video && (
-            <WrapItem>
-              <Button
-                as="a"
-                href={project.video}
-                target="_blank"
-                colorScheme="purple"
-                size="sm"
-              >
-                Démo vidéo
-              </Button>
-            </WrapItem>
+            <Button
+              as="a"
+              href={project.video}
+              target="_blank"
+              colorScheme="purple"
+              size="sm"
+              zIndex={3}
+            >
+              Démo vidéo
+            </Button>
           )}
-        </Wrap>
+        </HStack>
 
         <Text fontSize="sm" color="gray.500">
-          {project.type} — <Text as="span" fontStyle="italic">{project.status}</Text>
+          {project.type} —{' '}
+          <Text as="span" fontStyle="italic">
+            {project.status}
+          </Text>
         </Text>
       </VStack>
     </MotionBox>

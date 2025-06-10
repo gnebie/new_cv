@@ -34,7 +34,6 @@ export default function ServiceMissionCard({
   onClick,
 }) {
   const bgColor = useColorModeValue("white", "gray.800");
-  const textColor = useColorModeValue("gray.800", "gray.100");
   const accentColor = useColorModeValue("primary.500", "secondary.500");
 
   return (

@@ -1,10 +1,5 @@
-import { Box, Center, Heading, Text, VStack, HStack, Button, useColorModeValue } from '@chakra-ui/react';
-import { FaCode, FaRocket, FaRobot, FaCloud } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { Box, Center, Text, useColorModeValue } from '@chakra-ui/react';
 import FallingText from '../../components/react-bits/FallingText';
-
-const MotionBox = motion(Box);
-
 
 
 function BreakBack() {

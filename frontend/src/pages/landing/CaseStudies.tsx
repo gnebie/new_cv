@@ -1,18 +1,13 @@
-import { Box, Heading, Text, VStack, HStack, Tag, Button, useColorModeValue } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Box, Heading, Text, Button, useColorModeValue } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-
-const MotionBox = motion(Box);
 
 
 function CaseStudies() {
-  const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
-  const cardColor = useColorModeValue("white", "surface.dark.100");
   const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
-  const accentColor = useColorModeValue("primary.500", "secondary.500");
+    const bgColor = useColorModeValue("surface.light.100", "surface.dark.100");
 
   return (
-<Box textAlign="center" py={12}>
+<Box textAlign="center" py={12} bg={bgColor}>
   <Heading size="lg" mb={4} color={textColor}>
     📂 Exemples concrets de projets réalisés
   </Heading>

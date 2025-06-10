@@ -12,6 +12,7 @@ const Experience = lazy(() => import('./landing/Experience'));
 const WhyMe = lazy(() => import("./landing/WhyMe"));
 const CTA = lazy(() => import("./landing/CTA"));
 const CTA2 = lazy(() => import("./landing/CTA2"));
+const CTA3 = lazy(() => import("./landing/CTA3"));
 
 
 function Home() {
@@ -62,6 +63,7 @@ function Home() {
         <CaseStudies />
         <Box height="80px" />
         <CTA2 />
+        <CTA3 />
         <Box height="80px" />
         <DetailedSection />
       </Suspense>

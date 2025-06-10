@@ -9,7 +9,7 @@ const MotionButton = motion(Button);
 
 function CTA() {
     const textColor = useColorModeValue("text.light.primary", "text.dark.primary");
-    const bgColor = useColorModeValue("surface.light.100", "surface.dark.100");
+    const bgColor = useColorModeValue("surface.light.200", "surface.dark.200");
 
   return (
     <MotionBox textAlign="center" p={10}

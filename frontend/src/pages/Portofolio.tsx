@@ -1,17 +1,13 @@
-import { Box, Heading, Text, VStack, HStack, Image, Button, useColorModeValue } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Box, Heading, VStack, useColorModeValue } from '@chakra-ui/react';
 import Particles from '../components/react-bits/Particles';
 import MyPortfolio from './porfolio/MyPortfolio';
 
-const MotionBox = motion(Box);
 
 
 
 function Portfolio() {
   const bgColor = useColorModeValue("gray.100", "gray.900");
-  const cardColor = useColorModeValue("white", "gray.800");
   const textColor = useColorModeValue("gray.800", "white");
-  const accentColor = useColorModeValue("blue.500", "cyan.400");
   const particuleColor1 = useColorModeValue("primary.100", "#FFFFFF");
   const particuleColor2 = useColorModeValue("secondary.100", "#FFFFFF");
 
@@ -26,7 +22,7 @@ function Portfolio() {
         particleSpread={10}
         speed={0.1}
         particleBaseSize={100}
-        moveParticlesOnHover={true}
+        moveParticlesOnHover={false}
         alphaParticles={false}
         disableRotation={false}
         />
