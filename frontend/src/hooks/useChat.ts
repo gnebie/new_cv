@@ -6,6 +6,7 @@ import config from '../config';
 // Exemple de messages par défaut (peut être connecté à un vrai backend)
 const INITIAL_MESSAGES = [
   { sender: "bot", text: "Bonjour !  Je ne suis pas en ligne mais ma version virtuelle l'est et peux repondre a la majrité des questions sur mes capacitees et mon parcours. Comment puis-je vous aider ?" },
+  { sender: "bot", text: "Oups, zut, on dirait que je suis en maintenace :p" },
 ];
 
 
