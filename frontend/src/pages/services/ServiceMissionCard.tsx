@@ -17,6 +17,7 @@ import {
 import { motion } from "framer-motion";
 import { FaClock, FaCheckCircle } from "react-icons/fa";
 
+const MotionFlex = motion(Flex);
 const MotionBox = motion(Box);
 const MotionIcon = motion(Icon);
 
@@ -50,8 +51,7 @@ export default function ServiceMissionCard({
   const accentColor = useColorModeValue("primary.500", "secondary.500");
 
   return (
-    <MotionBox
-      as={Flex}
+    <MotionFlex
       direction={{ base: "column", md: index % 2 === 0 ? "row-reverse" : "row" }}
       bg={bgColor}
       boxShadow="md"

@@ -1,16 +1,10 @@
-import { Box, Center, Heading, Text, VStack, HStack, Button, useColorModeValue } from '@chakra-ui/react';
+import { Box, VStack, useColorModeValue } from '@chakra-ui/react';
 import { FaCode, FaRocket, FaRobot, FaCloud } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import FallingText from '../components/react-bits/FallingText';
 import InfiniteScroll from '../components/react-bits/InfiniteScroll';
-import SplitText from '../components/react-bits/SplitText';
-import DecryptedText from '../components/react-bits/DecryptedText';
 import Threads from '../components/react-bits/Threads';
 import WhatCanIDo from './services/whatcanido';
 import BreakBack from './services/BreakBack';
 
-const MotionBox = motion(Box);
 
 
 const SERVICES = [

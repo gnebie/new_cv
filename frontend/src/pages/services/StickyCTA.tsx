@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const MotionBox = motion(Box);
-const MotionButton = motion(Button);
 
 export default function StickyCTA() {
   // Couleurs semi-transparentes pour garder le contexte visible
@@ -44,23 +43,23 @@ export default function StickyCTA() {
           boxShadow="sm"
         >
           <HStack justify="center" spacing={4}>
-            <MotionButton
-              as={Link}
-              to="/contact"
-              size={buttonSize}
-              colorScheme="primary"
-              leftIcon={<Icon as={FaPhoneAlt} />}
-              variant="solid"
-              fontWeight="bold"
-              borderRadius="full"
-              boxShadow="md"
-              _hover={{ boxShadow: "lg", scale: 1.05 }}
-              _active={{ scale: 0.95 }}
-              animate={{ y: [0, -3, 0] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            <MotionBox animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
+            <Button
+                as={Link}
+                to="/contact"
+                size={buttonSize}
+                colorScheme="primary"
+                leftIcon={<Icon as={FaPhoneAlt} />}
+                variant="solid"
+                fontWeight="bold"
+                borderRadius="full"
+                boxShadow="md"
+                _hover={{ boxShadow: "lg", scale: 1.05 }}
+                _active={{ scale: 0.95 }}
             >
-              Contactez moi maintenant
-            </MotionButton>
+                Contactez moi maintenant
+            </Button>
+            </MotionBox>
           </HStack>
         </MotionBox>
       )}

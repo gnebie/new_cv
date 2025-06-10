@@ -20,11 +20,11 @@ const ACHIEVEMENTS = [
       details: "Ce site est fullstack, fait maison. Il reflète ma maîtrise de bout en bout.",
     },
     {
-      title: "🔐 APIs robustes et maintenables",
-          title: "🔧 Spécialisation API & backend",
-          description: "Conception de services robustes, documentés, testés. Expertise Python, FastAPI, C#, CI/CD, architecture modulaire.",
-          details: "J’aime quand le code est clair, testable, maintenable. Je mets en place des backends qui peuvent être repris par d’autres sans douleur. Et je documente tout.",
-          icon: FaTrophy,
+      // title: "🔐 APIs robustes et maintenables",
+        title: "🔧 Spécialisation API & backend",
+        description: "Conception de services robustes, documentés, testés. Expertise Python, FastAPI, C#, CI/CD, architecture modulaire.",
+        details: "J’aime quand le code est clair, testable, maintenable. Je mets en place des backends qui peuvent être repris par d’autres sans douleur. Et je documente tout.",
+        icon: FaTrophy,
       image: "/software-developer-6521720_1280.jpg",
     },
     {

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { FaComments } from "react-icons/fa";
 
 const MotionBox = motion(Box);
-const MotionButton = motion(Button);
 
 export default function CTAContactUnsure() {
   const bg = useColorModeValue("whiteAlpha.800", "blackAlpha.600");
@@ -31,7 +30,7 @@ export default function CTAContactUnsure() {
             </Text>
           </Text>
 
-          <MotionButton
+            <Button
             as={Link}
             to="/contact"
             size="lg"
@@ -39,13 +38,11 @@ export default function CTAContactUnsure() {
             leftIcon={<FaComments />}
             borderRadius="full"
             boxShadow="md"
-            whileHover={{ scale: 1.05, boxShadow: "lg" }}
-            whileTap={{ scale: 0.95 }}
-            animate={{ y: [0, -3, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          >
+            _hover={{ boxShadow: "lg", transform: "scale(1.05)" }}
+            _active={{ transform: "scale(0.95)" }}
+            >
             Échanger rapidement
-          </MotionButton>
+            </Button>
         </VStack>
       </MotionBox>
     </Center>
