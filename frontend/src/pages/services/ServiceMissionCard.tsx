@@ -21,17 +21,30 @@ const MotionBox = motion(Box);
 const MotionIcon = motion(Icon);
 
 export default function ServiceMissionCard({
-  index,           // position dans la liste (1, 2, 3…)
+  index,
   title,
   tagline,
   description,
-  details,         // peut être string ou string[]
+  details,
   pour,
   valeur,
   duration,
   image,
-  icon,
-  onClick,
+  icon,     // rendre optionnel
+  onClick,  // rendre optionnel
+}: {
+  index: number,
+  title: string,
+  tagline: string,
+  description: string,
+  details?: string | string[],
+  pour?: string,
+  valeur?: string,
+  duration?: string,
+  image?: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon?: any,         // ajouter "?" ici
+  onClick?: () => void // ajouter "?" ici
 }) {
   const bgColor = useColorModeValue("white", "gray.800");
   const accentColor = useColorModeValue("primary.500", "secondary.500");
