@@ -18,7 +18,6 @@ import { motion } from "framer-motion";
 import { FaClock, FaCheckCircle } from "react-icons/fa";
 
 const MotionFlex = motion(Flex);
-const MotionBox = motion(Box);
 const MotionIcon = motion(Icon);
 
 export default function ServiceMissionCard({
@@ -198,6 +197,6 @@ export default function ServiceMissionCard({
           </Button>
         )}
       </VStack>
-    </MotionBox>
+    </MotionFlex>
   );
 }
