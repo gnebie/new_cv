@@ -79,6 +79,7 @@ function Contact() {
         </Button>
 
         <Text fontSize="lg" color={textColor}>N'hésitez pas à me contacter via mes réseaux ou le formulaire ci-dessous.</Text>
+        <Text fontSize="lg" color={textColor}>Mon adresse mail : guillaumelale@gmail.com.</Text>
 
         {/* Icônes des réseaux sociaux */}
         <HStack spacing={6}>
